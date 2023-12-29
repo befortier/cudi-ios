@@ -36,7 +36,8 @@ struct SignupView: View {
             }
         }
         .navigationDestination(item: $viewModel.user) { user in
-            MainTabView(user: user)
+            MainTabView()
+                .setUser(user)
         }
         .onReceive(viewModel.$user) { user in
             guard let user else { return }

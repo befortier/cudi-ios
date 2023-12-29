@@ -21,23 +21,28 @@ struct RootView: View {
     var body: some View {
         Group {
             if let user = users.first {
-                MainTabView(user: user)
+                MainTabView()
+                    .setUser(user)
             } else if let userID = currentUserID {
-                ProgressView()
-                    .progressViewStyle(.automatic)
-                    .task {
-                        do {
-                            let user = try await viewModel.restoreCurrentUser(userID: userID)
-                            modelContext.insert(user)
-                        } catch {
-                            print("ERROR")
-                        }
-                    }
+                fetchRemoteUserProgressView(userID: userID)
             } else {
                 SplashScreen()
             }
         }
         .navigationViewStyle(.stack)
+    }
+
+    private func fetchRemoteUserProgressView(userID: User.ID) -> some View {
+        ProgressView()
+            .progressViewStyle(.automatic)
+            .task {
+                do {
+                    let user = try await viewModel.restoreCurrentUser(userID: userID)
+                    modelContext.insert(user)
+                } catch {
+                    print("ERROR")
+                }
+            }
     }
 }
 

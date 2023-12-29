@@ -36,6 +36,7 @@ extension SignupView {
                 name: createUserDTO.name,
                 email: createUserDTO.email,
                 createdAt: createUserDTO.createdAt,
+                avatarURL: defaultAvatarURL,
                 relationshipToCudi: createUserDTO.cudiRelationship,
                 favoritePartAboutCudi: createUserDTO.favoritePartAboutCudi
             )

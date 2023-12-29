@@ -14,7 +14,7 @@ final class User: Identifiable, Equatable {
     var name: String
     var email: String
     var createdAt: Date
-
+    var avatarURL: URL
     var relationshipToCudi: CudiRelationship
     var favoritePartAboutCudi: String
 
@@ -23,6 +23,7 @@ final class User: Identifiable, Equatable {
         name: String,
         email: String,
         createdAt: Date,
+        avatarURL: URL,
         relationshipToCudi: CudiRelationship,
         favoritePartAboutCudi: String
     ) {
@@ -30,6 +31,7 @@ final class User: Identifiable, Equatable {
         self.name = name
         self.email = email
         self.createdAt = createdAt
+        self.avatarURL = avatarURL
         self.relationshipToCudi = relationshipToCudi
         self.favoritePartAboutCudi = favoritePartAboutCudi
     }
@@ -42,6 +44,7 @@ extension User {
             name: "Ben Fortier",
             email: "bennett.fortier@gmail.com",
             createdAt: Date(timeIntervalSince1970: 1703714743),
+            avatarURL: defaultAvatarURL,
             relationshipToCudi: .father,
             favoritePartAboutCudi: "Chin"
         )
@@ -50,7 +53,6 @@ extension User {
 
 
 enum CudiRelationship: String, RawRepresentable, Sendable, Codable, CaseIterable, Identifiable {
-
     case father
     case cousin
     case grammy
@@ -71,3 +73,5 @@ enum CudiRelationship: String, RawRepresentable, Sendable, Codable, CaseIterable
         self = relationship
     }
 }
+
+let defaultAvatarURL = URL(string: "https://b3314858.smushcdn.com/3314858/wp-content/uploads/2021/12/Cartoon-Avatar-White-Background.png?lossy=2&strip=1&webp=1")!
