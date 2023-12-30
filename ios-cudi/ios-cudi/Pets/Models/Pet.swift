@@ -42,7 +42,9 @@ final class Pet: Identifiable, Equatable {
     }
 }
 
-enum PetType: String, RawRepresentable, Codable, Equatable {
+enum PetType: String, RawRepresentable, Codable, Equatable, CaseIterable, Identifiable {
     case dog
     case cat
+
+    var id: String { self.rawValue }
 }

@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 @MainActor
 struct EditableAvatarView: View {
     @Environment(\.circleCardSize) var circleCardSize
@@ -25,6 +24,17 @@ struct EditableAvatarView: View {
     @Binding private var selectedImage: UIImage?
     private var url: URL?
 
+    // MARK: Init
+    
+    init(
+        selectedImage: Binding<UIImage?>,
+        defaultImage: ImageContentType
+    ) {
+        self._selectedImage = selectedImage
+        self.defaultImage = defaultImage
+        self.url = nil
+    }
+
     init(
         selectedImage: Binding<UIImage?>,
         url: URL
@@ -36,11 +46,22 @@ struct EditableAvatarView: View {
 
     init(
         selectedImage: Binding<UIImage?>,
-        defaultImage: ImageContentType
+        defaultAvatar: DefaultAvatarType
     ) {
-        self._selectedImage = selectedImage
-        self.defaultImage = defaultImage
-        self.url = nil
+        self.init(
+            selectedImage: selectedImage,
+            defaultImage: .systemName(defaultAvatar.rawValue)
+        )
+    }
+
+    init(
+        selectedImage: Binding<UIImage?>,
+        petType: PetType
+    ) {
+        self.init(
+            selectedImage: selectedImage,
+            defaultAvatar: DefaultAvatarType(petType: petType)
+        )
     }
 
     @State private var showImagePicker = false
@@ -92,10 +113,10 @@ struct EditableAvatarView: View {
         EditableAvatarView(selectedImage: $image, defaultImage: .systemName("pawprint"))
             .setCircleCardSize(.large)
 
-        EditableAvatarView(selectedImage: $image, defaultImage: .systemName("pawprint"))
+        EditableAvatarView(selectedImage: $image, defaultAvatar: .person)
             .setCircleCardSize(.medium)
 
-        EditableAvatarView(selectedImage: $image, defaultImage: .systemName("person"))
+        EditableAvatarView(selectedImage: $image, petType: .cat)
             .setCircleCardSize(.small)
     }
 }

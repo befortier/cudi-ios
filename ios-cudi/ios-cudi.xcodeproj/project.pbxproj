@@ -21,6 +21,10 @@
 		574663A82B3CAF1700EFF1F9 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A72B3CAF1700EFF1F9 /* EmailTextField.swift */; };
 		574663AA2B3CB3E900EFF1F9 /* BaseSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A92B3CB3E900EFF1F9 /* BaseSecureField.swift */; };
 		5751F8412B40A10400F26C45 /* CircleCardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8402B40A10400F26C45 /* CircleCardSize.swift */; };
+		5751F8432B40A5D900F26C45 /* PetTypeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8422B40A5D900F26C45 /* PetTypeSelectionView.swift */; };
+		5751F8462B40E0D600F26C45 /* ImageContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8452B40E0D600F26C45 /* ImageContentType.swift */; };
+		5751F8482B40E0ED00F26C45 /* DefaultAvatarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8472B40E0ED00F26C45 /* DefaultAvatarType.swift */; };
+		5751F84A2B40E29C00F26C45 /* CircleImageView+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8492B40E29C00F26C45 /* CircleImageView+Environment.swift */; };
 		577394FC2B3DC00500F002E6 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */; };
 		577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FD2B3DC01000F002E6 /* EmailValidator.swift */; };
 		577395002B3DC0B800F002E6 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FF2B3DC0B800F002E6 /* TextFieldState.swift */; };
@@ -31,7 +35,7 @@
 		5773950B2B3DD51300F002E6 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773950A2B3DD51300F002E6 /* NameTextField.swift */; };
 		5773950D2B3DDAAD00F002E6 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773950C2B3DDAAD00F002E6 /* ValidationError.swift */; };
 		5773950F2B3DDFDE00F002E6 /* SignupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773950E2B3DDFDE00F002E6 /* SignupFormView.swift */; };
-		57769F4A2B3F9D4C008C894B /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57769F492B3F9D4C008C894B /* AddPetView.swift */; };
+		57769F4A2B3F9D4C008C894B /* CreatePetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57769F492B3F9D4C008C894B /* CreatePetView.swift */; };
 		57769F4D2B3FAC0A008C894B /* CreateUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57769F4C2B3FAC0A008C894B /* CreateUserDTO.swift */; };
 		57769F4F2B3FAC53008C894B /* SignupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57769F4E2B3FAC53008C894B /* SignupForm.swift */; };
 		579D5AD12B3C7DF200BEB762 /* ios_cudiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D5AD02B3C7DF200BEB762 /* ios_cudiApp.swift */; };
@@ -109,6 +113,10 @@
 		574663A72B3CAF1700EFF1F9 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		574663A92B3CB3E900EFF1F9 /* BaseSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSecureField.swift; sourceTree = "<group>"; };
 		5751F8402B40A10400F26C45 /* CircleCardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCardSize.swift; sourceTree = "<group>"; };
+		5751F8422B40A5D900F26C45 /* PetTypeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTypeSelectionView.swift; sourceTree = "<group>"; };
+		5751F8452B40E0D600F26C45 /* ImageContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContentType.swift; sourceTree = "<group>"; };
+		5751F8472B40E0ED00F26C45 /* DefaultAvatarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAvatarType.swift; sourceTree = "<group>"; };
+		5751F8492B40E29C00F26C45 /* CircleImageView+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircleImageView+Environment.swift"; sourceTree = "<group>"; };
 		577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		577394FD2B3DC01000F002E6 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		577394FF2B3DC0B800F002E6 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
@@ -119,7 +127,7 @@
 		5773950A2B3DD51300F002E6 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		5773950C2B3DDAAD00F002E6 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		5773950E2B3DDFDE00F002E6 /* SignupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormView.swift; sourceTree = "<group>"; };
-		57769F492B3F9D4C008C894B /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
+		57769F492B3F9D4C008C894B /* CreatePetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetView.swift; sourceTree = "<group>"; };
 		57769F4C2B3FAC0A008C894B /* CreateUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserDTO.swift; sourceTree = "<group>"; };
 		57769F4E2B3FAC53008C894B /* SignupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupForm.swift; sourceTree = "<group>"; };
 		579D5ACD2B3C7DF200BEB762 /* ios-cudi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-cudi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,9 +242,10 @@
 		572BE5172B4070E30039F1E6 /* CircleImage */ = {
 			isa = PBXGroup;
 			children = (
+				5751F84B2B40E2B500F26C45 /* Enum */,
 				57E61F2C2B3F38E70099555A /* CircleImageView.swift */,
 				572BE5182B4070F70039F1E6 /* EditableAvatarView.swift */,
-				5751F8402B40A10400F26C45 /* CircleCardSize.swift */,
+				5751F8492B40E29C00F26C45 /* CircleImageView+Environment.swift */,
 			);
 			path = CircleImage;
 			sourceTree = "<group>";
@@ -264,6 +273,24 @@
 				574663A92B3CB3E900EFF1F9 /* BaseSecureField.swift */,
 			);
 			path = BaseTextField;
+			sourceTree = "<group>";
+		};
+		5751F8442B40A5DE00F26C45 /* PetSelection */ = {
+			isa = PBXGroup;
+			children = (
+				5751F8422B40A5D900F26C45 /* PetTypeSelectionView.swift */,
+			);
+			path = PetSelection;
+			sourceTree = "<group>";
+		};
+		5751F84B2B40E2B500F26C45 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				5751F8402B40A10400F26C45 /* CircleCardSize.swift */,
+				5751F8452B40E0D600F26C45 /* ImageContentType.swift */,
+				5751F8472B40E0ED00F26C45 /* DefaultAvatarType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		577394FA2B3DBFF800F002E6 /* Validation */ = {
@@ -484,10 +511,11 @@
 		57E61F3F2B3F3F4B0099555A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5751F8442B40A5DE00F26C45 /* PetSelection */,
 				57E61F412B3F3FA40099555A /* PetCarouselView.swift */,
 				57FA76D02B3F707200CACAD0 /* PetCard.swift */,
 				57FA76D22B3F717800CACAD0 /* PetDetailView.swift */,
-				57769F492B3F9D4C008C894B /* AddPetView.swift */,
+				57769F492B3F9D4C008C894B /* CreatePetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -641,6 +669,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				577394FC2B3DC00500F002E6 /* TextFieldValidator.swift in Sources */,
+				5751F8432B40A5D900F26C45 /* PetTypeSelectionView.swift in Sources */,
 				579D5B182B3C8DF500BEB762 /* SignupView.swift in Sources */,
 				577395092B3DD4DA00F002E6 /* PasswordTextField.swift in Sources */,
 				579D5B062B3C7F2D00BEB762 /* Endpoint.swift in Sources */,
@@ -658,11 +687,13 @@
 				5773950D2B3DDAAD00F002E6 /* ValidationError.swift in Sources */,
 				57E61F472B3F45330099555A /* PetStore+Stub.swift in Sources */,
 				572BE5102B406A790039F1E6 /* PostEndpoint.swift in Sources */,
+				5751F84A2B40E29C00F26C45 /* CircleImageView+Environment.swift in Sources */,
 				572BE5082B4064D70039F1E6 /* Environment.swift in Sources */,
 				57E61F3E2B3F3E980099555A /* User+Environment.swift in Sources */,
 				577395052B3DC29400F002E6 /* SignupView+ViewModel.swift in Sources */,
 				579D5B042B3C7F1B00BEB762 /* NetworkError.swift in Sources */,
 				579D5B102B3C815800BEB762 /* MainTabView.swift in Sources */,
+				5751F8482B40E0ED00F26C45 /* DefaultAvatarType.swift in Sources */,
 				57FA76D62B3F728000CACAD0 /* PetServiceAPIClient.swift in Sources */,
 				57E61F3C2B3F3E2D0099555A /* AppState.swift in Sources */,
 				57E61F392B3F3DA20099555A /* AppState+ViewModifier.swift in Sources */,
@@ -695,9 +726,10 @@
 				57E61F292B3F33460099555A /* Shimmer+ViewModifier.swift in Sources */,
 				57E61F182B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift in Sources */,
 				5773950B2B3DD51300F002E6 /* NameTextField.swift in Sources */,
+				5751F8462B40E0D600F26C45 /* ImageContentType.swift in Sources */,
 				579D5B1F2B3CA9D600BEB762 /* LandingBackgroundView.swift in Sources */,
 				57E61F212B3F29880099555A /* ProfileHeaderView.swift in Sources */,
-				57769F4A2B3F9D4C008C894B /* AddPetView.swift in Sources */,
+				57769F4A2B3F9D4C008C894B /* CreatePetView.swift in Sources */,
 				57E61F2B2B3F36AD0099555A /* ProfileListItem.swift in Sources */,
 				5751F8412B40A10400F26C45 /* CircleCardSize.swift in Sources */,
 				57E61F1B2B3F18AE0099555A /* ProfileView.swift in Sources */,

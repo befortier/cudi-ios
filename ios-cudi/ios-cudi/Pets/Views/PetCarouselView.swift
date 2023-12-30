@@ -34,7 +34,7 @@ struct ScrollablePetList: View {
 
     private var addPetCard: some View {
         NavigationLink {
-            AddPetView()
+            CreatePetView()
         } label: {
             PetCard()
         }

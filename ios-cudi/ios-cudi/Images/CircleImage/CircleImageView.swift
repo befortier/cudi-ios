@@ -8,16 +8,11 @@
 import Foundation
 import SwiftUI
 
-enum ImageContentType: Sendable, Equatable {
-    case systemName(String)
-    case remote(URL)
-    case image(UIImage)
-}
-
-
 @MainActor
 struct CircleImageView: View {
     @Environment(\.circleCardSize) var circleCardSize
+    @Environment(\.circleImageContentMode) var contentMode: ContentMode?
+
     private let contentType: ImageContentType
 
     init(imageURL: URL) {
@@ -46,15 +41,14 @@ struct CircleImageView: View {
     @ViewBuilder
     private var contentView: some View {
         switch contentType {
+        case .defaultAvatar(let defaultAvatarType):
+            image(systemName: defaultAvatarType.rawValue)
         case .systemName(let systemName):
-            Image(systemName: systemName)
-                .resizable()
-                .padding()
-                .aspectRatio(contentMode: .fit)
+            image(systemName: systemName)
         case .image(let uiImage):
             Image(uiImage: uiImage)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: contentMode ?? .fill)
         case .remote(let imageURL):
             AsyncCachedImage(url: imageURL) {
                 Circle()
@@ -63,8 +57,40 @@ struct CircleImageView: View {
             }
         }
     }
+
+    private func image(systemName: String) -> some View {
+        Image(systemName: systemName)
+            .resizable()
+            .padding()
+            .aspectRatio(contentMode: contentMode ?? .fit)
+    }
 }
 
 #Preview {
-    CircleImageView(contentType: .systemName("pawprint"))
+
+    VStack {
+        HStack {
+            CircleImageView(contentType: .systemName("pawprint"))
+                .setCircleCardSize(.large)
+
+            CircleImageView(contentType: .systemName("pawprint"))
+                .setCircleCardSize(.medium)
+
+            CircleImageView(contentType: .systemName("pawprint"))
+                .setCircleCardSize(.small)
+        }
+
+        HStack {
+
+            CircleImageView(contentType: .systemName("pawprint"))
+            CircleImageView(contentType: .defaultAvatar(.cat))
+            CircleImageView(contentType: .defaultAvatar(.dog))
+
+            CircleImageView(contentType: .image(UIImage(systemName: "person")!))
+                .setCircleAspectRatio(contentMode: .fill)
+
+
+        }
+        .setCircleCardSize(.medium)
+    }
 }
