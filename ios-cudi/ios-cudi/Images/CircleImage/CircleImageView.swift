@@ -8,40 +8,53 @@
 import Foundation
 import SwiftUI
 
+enum ImageContentType: Sendable, Equatable {
+    case systemName(String)
+    case remote(URL)
+    case image(UIImage)
+}
+
+
 @MainActor
 struct CircleImageView: View {
-    private enum ContentType: Sendable, Equatable {
-        case systemName(String)
-        case remote(URL)
-    }
-
-    private let content: ContentType
+    @Environment(\.circleCardSize) var circleCardSize
+    private let contentType: ImageContentType
 
     init(imageURL: URL) {
-        self.content = .remote(imageURL)
+        self.contentType = .remote(imageURL)
     }
 
     init(systemName: String) {
-        self.content = .systemName(systemName)
+        self.contentType = .systemName(systemName)
+    }
+
+    init(contentType: ImageContentType) {
+        self.contentType = contentType
     }
 
     var body: some View {
         contentView
             .clipShape(Circle())
-            .overlay(
+            .overlay {
                 Circle()
                     .stroke(.gray.opacity(0.15), lineWidth: 1)
-            )
+            }
+            .frame(width: circleCardSize.rawValue, height: circleCardSize.rawValue)
+
     }
 
     @ViewBuilder
     private var contentView: some View {
-        switch content {
+        switch contentType {
         case .systemName(let systemName):
             Image(systemName: systemName)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
                 .padding()
+                .aspectRatio(contentMode: .fit)
+        case .image(let uiImage):
+            Image(uiImage: uiImage)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
         case .remote(let imageURL):
             AsyncCachedImage(url: imageURL) {
                 Circle()
@@ -53,5 +66,5 @@ struct CircleImageView: View {
 }
 
 #Preview {
-    CircleImageView(systemName: "pawprint")
+    CircleImageView(contentType: .systemName("pawprint"))
 }

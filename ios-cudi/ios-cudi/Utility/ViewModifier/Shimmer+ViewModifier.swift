@@ -66,7 +66,7 @@ struct ShimmerModifier: ViewModifier {
 
 
 extension View {
-    func shimmer() -> any View {
+    func shimmer() -> some View {
         modifier(ShimmerModifier())
     }
 }

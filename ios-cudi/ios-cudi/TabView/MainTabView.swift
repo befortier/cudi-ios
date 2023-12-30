@@ -59,6 +59,8 @@ struct MainTabView: View {
 struct ActivityFeedListView: View {
     @Environment(\.petStore) var petStore: PetStore
     @Environment(\.modelContext) var modelContext: ModelContext
+    @Environment(\.user) var user: User
+
     @Query var pets: [Pet]
 
     var body: some View {
@@ -73,6 +75,11 @@ struct ActivityFeedListView: View {
 
             Button("Add cudi to \(petStore.pets.count) \(pets.count)") {
                 modelContext.insert(Pet(petDTO: .cudi))
+            }
+
+            Button("Logout") {
+                petStore.removePets()
+                modelContext.delete(user)
             }
                 .navigationTitle("Activity Feed")
         }

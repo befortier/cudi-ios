@@ -11,12 +11,16 @@ import SwiftUI
 @MainActor
 struct ProfileHeaderView: View {
     @Environment(\.user) var user: User
+    @State var selectedImage: UIImage?
 
     var body: some View {
         VStack(spacing: 16) {
             HStack(spacing: 16) {
-                CircleImageView(imageURL: user.avatarURL)
-                    .frame(width: 90, height: 90)
+                EditableAvatarView(
+                    selectedImage: $selectedImage,
+                    url: user.avatarURL
+                )
+                .setCircleCardSize(.medium)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(user.name)
@@ -33,6 +37,7 @@ struct ProfileHeaderView: View {
 }
 
 #Preview {
-    ProfileHeaderView()
-        .setAppState(.stub())
+    let container = previewModelContainer
+    return ProfileHeaderView()
+        .modelContainer(container)
 }

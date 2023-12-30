@@ -27,7 +27,7 @@ struct PetCard: View {
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
             avatarIconView
-                .frame(width: avatarSize, height: avatarSize)
+                .setCircleCardSize(.medium)
                 .background(Color.white)
                 .clipShape(Circle())
                 .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 3)
@@ -54,11 +54,12 @@ struct PetCard: View {
 }
 
 #Preview {
-    HStack {
+    let container = previewModelContainer
+    return HStack {
         PetCard(pet: Pet(petDTO: .cudi))
         PetCard()
     }
-    .modelContainer(previewModelContainer)
+    .modelContainer(container)
     .padding()
     .background(AppColor.softBackground)
 }

@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 import Combine
 
-@MainActor
-class ImageLoader: ObservableObject {
-    @Published var image: UIImage?
+@MainActor @Observable
+class ImageLoader {
+    var image: UIImage?
 
     private let url: URL
     private var cache: ImageCache
@@ -43,10 +43,4 @@ class ImageLoader: ObservableObject {
             })
             .assign(to: \.image, on: self)
     }
-
-    deinit {
-        cancellable?.cancel()
-    }
 }
-
-

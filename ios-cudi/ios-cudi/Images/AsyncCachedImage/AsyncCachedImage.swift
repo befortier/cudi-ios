@@ -10,7 +10,7 @@ import SwiftUI
 
 @MainActor
 struct AsyncCachedImage<Placeholder: View>: View {
-    @StateObject private var loader: ImageLoader
+    private var loader: ImageLoader
     private let placeholder: () -> Placeholder
 
     init(
@@ -18,7 +18,7 @@ struct AsyncCachedImage<Placeholder: View>: View {
         @ViewBuilder placeholder: @escaping () -> Placeholder
     ) {
         self.placeholder = placeholder
-        _loader = StateObject(wrappedValue: ImageLoader(url: url))
+        loader = .init(url: url)
     }
 
     var body: some View {

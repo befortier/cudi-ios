@@ -19,9 +19,17 @@ struct SignupFormView: View {
     var form: SignupForm
     @Binding var formStatus: FormStatus
     @State var errorMessage: String?
+    @State private var showImagePicker = false
+    @State private var selectedImage: UIImage?
 
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(alignment: .center, spacing: 24) {
+            EditableAvatarView(
+                selectedImage: $selectedImage,
+                defaultImage: .systemName("person")
+            )
+            .setCircleCardSize(.large)
+
             NameTextField(textFieldState: form.nameState)
 
             EmailTextField(textFieldState: form.emailState)
@@ -82,5 +90,12 @@ struct SignupFormView: View {
                 .background(Color.purple)
                 .cornerRadius(10)
         }
+    }
+}
+
+
+#Preview {
+    NavigationStack {
+        SignupFormView(form: .init(), formStatus: .constant(.idle))
     }
 }

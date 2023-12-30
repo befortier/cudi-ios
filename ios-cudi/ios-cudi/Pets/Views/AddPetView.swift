@@ -10,8 +10,27 @@ import SwiftUI
 
 @MainActor
 struct AddPetView: View {
+    private let imageDiameter: CGFloat = 100
+    @State var selectedImage: UIImage?
+
     var body: some View {
-        EmptyView()
+        VStack {
+            addImageSection
+            Spacer()
+
+        }
+    }
+
+    private var addImageSection: some View {
+        EditableAvatarView(
+            selectedImage: $selectedImage,
+            defaultImage: .systemName("person")
+        )
+        .frame(width: imageDiameter, height: imageDiameter)
+        .foregroundStyle(.gray)
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 12)
+        .background(AppColor.background)
     }
 }
 
@@ -23,3 +42,7 @@ struct PetFormView: View {
     }
 }
 
+
+#Preview {
+    AddPetView()
+}

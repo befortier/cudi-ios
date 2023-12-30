@@ -18,15 +18,3 @@ extension EnvironmentValues {
     set { self[UserEnvironmentKey.self] = newValue }
   }
 }
-
-//@MainActor
-//private struct UserStoreEnvironmentKey: EnvironmentKey {
-//    static let defaultValue = UserStore.stub
-//}
-//
-//extension EnvironmentValues {
-//  var userStore: UserStore {
-//    get { self[UserStoreEnvironmentKey.self] }
-//    set { self[UserStoreEnvironmentKey.self] = newValue }
-//  }
-//}

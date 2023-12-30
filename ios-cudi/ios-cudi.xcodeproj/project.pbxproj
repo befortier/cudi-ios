@@ -13,11 +13,14 @@
 		572BE50E2B40664A0039F1E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE50D2B40664A0039F1E6 /* HTTPMethod.swift */; };
 		572BE5102B406A790039F1E6 /* PostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE50F2B406A790039F1E6 /* PostEndpoint.swift */; };
 		572BE5122B406A980039F1E6 /* GetEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5112B406A980039F1E6 /* GetEndpoint.swift */; };
+		572BE5152B40705A0039F1E6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5142B40705A0039F1E6 /* ImagePickerView.swift */; };
+		572BE5192B4070F70039F1E6 /* EditableAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5182B4070F70039F1E6 /* EditableAvatarView.swift */; };
 		574663A22B3CAE6900EFF1F9 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A12B3CAE6900EFF1F9 /* BaseTextField.swift */; };
 		574663A42B3CAE8600EFF1F9 /* BaseTextField+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A32B3CAE8600EFF1F9 /* BaseTextField+Environment.swift */; };
 		574663A62B3CAE9D00EFF1F9 /* BaseTextField+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A52B3CAE9D00EFF1F9 /* BaseTextField+ViewModel.swift */; };
 		574663A82B3CAF1700EFF1F9 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A72B3CAF1700EFF1F9 /* EmailTextField.swift */; };
 		574663AA2B3CB3E900EFF1F9 /* BaseSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A92B3CB3E900EFF1F9 /* BaseSecureField.swift */; };
+		5751F8412B40A10400F26C45 /* CircleCardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8402B40A10400F26C45 /* CircleCardSize.swift */; };
 		577394FC2B3DC00500F002E6 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */; };
 		577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FD2B3DC01000F002E6 /* EmailValidator.swift */; };
 		577395002B3DC0B800F002E6 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FF2B3DC0B800F002E6 /* TextFieldState.swift */; };
@@ -98,11 +101,14 @@
 		572BE50D2B40664A0039F1E6 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		572BE50F2B406A790039F1E6 /* PostEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpoint.swift; sourceTree = "<group>"; };
 		572BE5112B406A980039F1E6 /* GetEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEndpoint.swift; sourceTree = "<group>"; };
+		572BE5142B40705A0039F1E6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		572BE5182B4070F70039F1E6 /* EditableAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableAvatarView.swift; sourceTree = "<group>"; };
 		574663A12B3CAE6900EFF1F9 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		574663A32B3CAE8600EFF1F9 /* BaseTextField+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextField+Environment.swift"; sourceTree = "<group>"; };
 		574663A52B3CAE9D00EFF1F9 /* BaseTextField+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextField+ViewModel.swift"; sourceTree = "<group>"; };
 		574663A72B3CAF1700EFF1F9 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		574663A92B3CB3E900EFF1F9 /* BaseSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSecureField.swift; sourceTree = "<group>"; };
+		5751F8402B40A10400F26C45 /* CircleCardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCardSize.swift; sourceTree = "<group>"; };
 		577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		577394FD2B3DC01000F002E6 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		577394FF2B3DC0B800F002E6 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
@@ -207,6 +213,34 @@
 			path = Endpoint;
 			sourceTree = "<group>";
 		};
+		572BE5132B4070510039F1E6 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				572BE5142B40705A0039F1E6 /* ImagePickerView.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		572BE5162B4070D50039F1E6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				572BE5172B4070E30039F1E6 /* CircleImage */,
+				57E61F1D2B3F29100099555A /* AsyncCachedImage */,
+				572BE5132B4070510039F1E6 /* ImagePicker */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		572BE5172B4070E30039F1E6 /* CircleImage */ = {
+			isa = PBXGroup;
+			children = (
+				57E61F2C2B3F38E70099555A /* CircleImageView.swift */,
+				572BE5182B4070F70039F1E6 /* EditableAvatarView.swift */,
+				5751F8402B40A10400F26C45 /* CircleCardSize.swift */,
+			);
+			path = CircleImage;
+			sourceTree = "<group>";
+		};
 		5746639F2B3CAE0700EFF1F9 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,9 +309,9 @@
 		579D5ACF2B3C7DF200BEB762 /* ios-cudi */ = {
 			isa = PBXGroup;
 			children = (
+				572BE5162B4070D50039F1E6 /* Images */,
 				57E61F3A2B3F3DFA0099555A /* Application */,
 				57E61F2E2B3F39D90099555A /* Pets */,
-				57E61F1D2B3F29100099555A /* AsyncCachedImage */,
 				57E61F192B3F18A30099555A /* ProfileView */,
 				5746639F2B3CAE0700EFF1F9 /* TextFields */,
 				579D5B142B3C86AA00BEB762 /* Utility */,
@@ -411,7 +445,6 @@
 				57E61F1E2B3F29420099555A /* AsyncCachedImage.swift */,
 				57E61F242B3F2C1B0099555A /* ImageLoader.swift */,
 				57E61F262B3F2D9F0099555A /* ImageCache.swift */,
-				57E61F2C2B3F38E70099555A /* CircleImageView.swift */,
 			);
 			path = AsyncCachedImage;
 			sourceTree = "<group>";
@@ -652,11 +685,13 @@
 				57E61F422B3F3FA40099555A /* PetCarouselView.swift in Sources */,
 				577395002B3DC0B800F002E6 /* TextFieldState.swift in Sources */,
 				579D5AD12B3C7DF200BEB762 /* ios_cudiApp.swift in Sources */,
+				572BE5192B4070F70039F1E6 /* EditableAvatarView.swift in Sources */,
 				57E61F252B3F2C1B0099555A /* ImageLoader.swift in Sources */,
 				574663A62B3CAE9D00EFF1F9 /* BaseTextField+ViewModel.swift in Sources */,
 				57E61F272B3F2D9F0099555A /* ImageCache.swift in Sources */,
 				579D5B082B3C7FB000BEB762 /* UserDTO.swift in Sources */,
 				579D5B162B3C86B400BEB762 /* UserDefaults+PropertyWrapper.swift in Sources */,
+				572BE5152B40705A0039F1E6 /* ImagePickerView.swift in Sources */,
 				57E61F292B3F33460099555A /* Shimmer+ViewModifier.swift in Sources */,
 				57E61F182B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift in Sources */,
 				5773950B2B3DD51300F002E6 /* NameTextField.swift in Sources */,
@@ -664,6 +699,7 @@
 				57E61F212B3F29880099555A /* ProfileHeaderView.swift in Sources */,
 				57769F4A2B3F9D4C008C894B /* AddPetView.swift in Sources */,
 				57E61F2B2B3F36AD0099555A /* ProfileListItem.swift in Sources */,
+				5751F8412B40A10400F26C45 /* CircleCardSize.swift in Sources */,
 				57E61F1B2B3F18AE0099555A /* ProfileView.swift in Sources */,
 				572BE50B2B4064EF0039F1E6 /* EnvironmentStore.swift in Sources */,
 				579D5B002B3C7EC400BEB762 /* NetworkClient.swift in Sources */,
