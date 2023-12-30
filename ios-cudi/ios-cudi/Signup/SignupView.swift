@@ -10,7 +10,7 @@ import SwiftUI
 
 @MainActor
 struct SignupView: View {
-    var form = FormView.Form(id: .signup)
+    var form = SignupForm()
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel: ViewModel = ViewModel()
     @Environment(\.modelContext) var modelContext
@@ -37,12 +37,6 @@ struct SignupView: View {
         }
         .navigationDestination(item: $viewModel.user) { user in
             MainTabView()
-                .setAppState(
-                    .init(
-                        modelContext: modelContext,
-                        user: user
-                    )
-                )
         }
         .onReceive(viewModel.$user) { user in
             guard let user else { return }
@@ -56,7 +50,7 @@ struct SignupView: View {
                 .font(.title3)
                 .bold()
             
-            FormView(
+            SignupFormView(
                 form: form,
                 formStatus: $viewModel.formStatus
             )

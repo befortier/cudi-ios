@@ -41,6 +41,7 @@ struct CircleImageView: View {
             Image(systemName: systemName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .padding()
         case .remote(let imageURL):
             AsyncCachedImage(url: imageURL) {
                 Circle()
@@ -49,4 +50,8 @@ struct CircleImageView: View {
             }
         }
     }
+}
+
+#Preview {
+    CircleImageView(systemName: "pawprint")
 }

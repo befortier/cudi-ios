@@ -23,15 +23,11 @@ struct RootView: View {
     var body: some View {
         Group {
             if let user = users.first {
-                let appState = appState ?? AppState(
-                    modelContext: modelContext,
-                    user: user
-                )
                 MainTabView()
-                    .setAppState(appState)
-                    .onFirstAppear {
-                        self.appState = appState
-                    }
+                    .setAppState(AppState(
+                        modelContext: modelContext,
+                        user: user
+                    ))
             } else if let userID = currentUserID {
                 fetchRemoteUserProgressView(userID: userID)
             } else {

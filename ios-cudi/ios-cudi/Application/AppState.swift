@@ -26,7 +26,10 @@ struct AppState {
         user: User
     ) {
         self.user = user
-        self.petStore = PetStore(modelContext: modelContext, user: user)
+        self.petStore = PetStore(
+            modelContext: modelContext,
+            user: user
+        )
     }
 }
 

@@ -10,9 +10,8 @@ import SwiftData
 
 @Model
 final class Pet: Identifiable, Equatable {
-    @Attribute(.unique)
-    var id: String
-    
+    @Attribute(.unique) var id: String
+
     var name: String
     var type: PetType
     var birthdate: Date

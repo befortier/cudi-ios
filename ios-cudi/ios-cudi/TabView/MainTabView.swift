@@ -58,11 +58,21 @@ struct MainTabView: View {
 
 struct ActivityFeedListView: View {
     @Environment(\.petStore) var petStore: PetStore
+    @Environment(\.modelContext) var modelContext: ModelContext
+    @Query var pets: [Pet]
 
     var body: some View {
         NavigationStack {
             Button("Clear pets") {
                 petStore.removePets()
+            }
+
+            Button("Add pets") {
+                Task { try? await petStore.loadPets() }
+            }
+
+            Button("Add cudi to \(petStore.pets.count) \(pets.count)") {
+                modelContext.insert(Pet(petDTO: .cudi))
             }
                 .navigationTitle("Activity Feed")
         }

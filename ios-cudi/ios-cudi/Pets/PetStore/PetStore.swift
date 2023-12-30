@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftData
-
+import SwiftUI
 @MainActor @Observable
 class PetStore {
     private var petRefreshTask: Task<[PetDTO], any Error>?
@@ -22,35 +22,28 @@ class PetStore {
         user: User,
         pets: [Pet]? = nil
     ) {
-        // TODO: Load from CoreData here
         self.modelContext = modelContext
         self.user = user
+
         let cachedPets = try? modelContext.fetch(FetchDescriptor<Pet>())
         self.pets = pets ?? cachedPets ?? []
     }
 
     func loadPets() async throws {
         guard petRefreshTask == nil else { return }
-        let petRefreshTask = Task {
-            return try await petServiceAPIClient.getPets()
-        }
+        let petRefreshTask = Task { try await petServiceAPIClient.getPets() }
         self.petRefreshTask = petRefreshTask
         let pets = try await petRefreshTask.value
         self.pets = pets.map { Pet(petDTO: $0) }
         self.pets.forEach { modelContext.insert($0) }
+        try modelContext.save()
         self.petRefreshTask = nil
-
-        let cachedPets = try? modelContext.fetch(FetchDescriptor<Pet>())
-        print("Cached", cachedPets, cachedPets?.map { $0.id })
     }
 
     func removePets() {
-        self.pets.forEach { modelContext.delete($0) }
+        self.pets.forEach { 
+            modelContext.delete($0)
+        }
         self.pets = []
     }
-}
-
-struct PetRepository {
-    let petStore: PetStore
-    
 }

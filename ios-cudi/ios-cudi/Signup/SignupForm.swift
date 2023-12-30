@@ -9,20 +9,11 @@ import Foundation
 
 @MainActor @Observable
 class SignupForm: Identifiable {
-    enum Identifier {
-        case signup
-    }
-    let id: Identifier
-
     var emailState = TextFieldState(validator: EmailValidator())
     var passwordState = TextFieldState(validator: PasswordValidator())
     var nameState = TextFieldState(validator: PasswordValidator())
     var cudiRelationship: CudiRelationship = .father
     var favoriteCudiThing: String = ""
-
-    init(id: Identifier) {
-        self.id = id
-    }
 
     func validate() -> Bool {
         [emailState, passwordState, nameState]

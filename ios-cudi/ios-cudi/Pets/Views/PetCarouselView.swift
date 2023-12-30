@@ -14,26 +14,42 @@ struct ScrollablePetList: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 16) {
+            HStack(spacing: 24) {
                 ForEach(pets) { pet in
-                    NavigationLink {
-                        PetDetailView(pet: pet)
-                    } label: {
-                        PetItem(pet: pet)
-                    }
+                    navigablePetCard(pet: pet)
                 }
+                addPetCard
             }
-            .padding(.horizontal)
+            .padding(.horizontal, 8)
+        }
+    }
+
+    private func navigablePetCard(pet: Pet) -> some View {
+        NavigationLink {
+            PetDetailView(pet: pet)
+        } label: {
+            PetCard(pet: pet)
+        }
+    }
+
+    private var addPetCard: some View {
+        NavigationLink {
+            AddPetView()
+        } label: {
+            PetCard()
         }
     }
 }
 
+import SwiftData
 #Preview {
+    let container = previewModelContainer
 
     let pets = [PetDTO.cudi].map { Pet(petDTO: $0 )}
     return NavigationStack {
         ScrollablePetList(pets: pets)
             .padding()
             .background(AppColor.softBackground)
+            .modelContainer(previewModelContainer)
     }
 }

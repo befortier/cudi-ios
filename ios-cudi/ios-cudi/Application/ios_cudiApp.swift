@@ -13,6 +13,12 @@ struct ios_cudiApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .onFirstAppear {
+                    print("Documents Directory: ", sharedModelContainer.configurations.first)
+
+                #if TARGET_IPHONE_SIMULATOR
+                 #endif
+                }
         }
         .modelContainer(sharedModelContainer)
     }
@@ -31,3 +37,15 @@ var sharedModelContainer: ModelContainer = {
         fatalError("Could not create ModelContainer: \(error)")
     }
 }()
+
+var previewModelContainer: ModelContainer {
+    let schema = Schema([
+        Pet.self,
+        User.self
+    ])
+    let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: schema, configurations: [config])
+    return container
+}
+
+
