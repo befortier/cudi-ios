@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572BE5052B4064770039F1E6 /* AddPetDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5042B4064770039F1E6 /* AddPetDTO.swift */; };
+		572BE5082B4064D70039F1E6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5072B4064D70039F1E6 /* Environment.swift */; };
+		572BE50B2B4064EF0039F1E6 /* EnvironmentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE50A2B4064EF0039F1E6 /* EnvironmentStore.swift */; };
+		572BE50E2B40664A0039F1E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE50D2B40664A0039F1E6 /* HTTPMethod.swift */; };
+		572BE5102B406A790039F1E6 /* PostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE50F2B406A790039F1E6 /* PostEndpoint.swift */; };
+		572BE5122B406A980039F1E6 /* GetEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5112B406A980039F1E6 /* GetEndpoint.swift */; };
 		574663A22B3CAE6900EFF1F9 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A12B3CAE6900EFF1F9 /* BaseTextField.swift */; };
 		574663A42B3CAE8600EFF1F9 /* BaseTextField+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A32B3CAE8600EFF1F9 /* BaseTextField+Environment.swift */; };
 		574663A62B3CAE9D00EFF1F9 /* BaseTextField+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574663A52B3CAE9D00EFF1F9 /* BaseTextField+ViewModel.swift */; };
@@ -86,6 +92,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		572BE5042B4064770039F1E6 /* AddPetDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetDTO.swift; sourceTree = "<group>"; };
+		572BE5072B4064D70039F1E6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		572BE50A2B4064EF0039F1E6 /* EnvironmentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentStore.swift; sourceTree = "<group>"; };
+		572BE50D2B40664A0039F1E6 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		572BE50F2B406A790039F1E6 /* PostEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpoint.swift; sourceTree = "<group>"; };
+		572BE5112B406A980039F1E6 /* GetEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEndpoint.swift; sourceTree = "<group>"; };
 		574663A12B3CAE6900EFF1F9 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		574663A32B3CAE8600EFF1F9 /* BaseTextField+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextField+Environment.swift"; sourceTree = "<group>"; };
 		574663A52B3CAE9D00EFF1F9 /* BaseTextField+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextField+ViewModel.swift"; sourceTree = "<group>"; };
@@ -175,6 +187,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		572BE5092B4064DF0039F1E6 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				572BE5072B4064D70039F1E6 /* Environment.swift */,
+				572BE50A2B4064EF0039F1E6 /* EnvironmentStore.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		572BE50C2B4066180039F1E6 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				579D5B052B3C7F2D00BEB762 /* Endpoint.swift */,
+				572BE50D2B40664A0039F1E6 /* HTTPMethod.swift */,
+				572BE50F2B406A790039F1E6 /* PostEndpoint.swift */,
+				572BE5112B406A980039F1E6 /* GetEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
 		5746639F2B3CAE0700EFF1F9 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,10 +321,11 @@
 		579D5AFC2B3C7E6800BEB762 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				572BE50C2B4066180039F1E6 /* Endpoint */,
+				572BE5092B4064DF0039F1E6 /* Environment */,
 				579D5AFF2B3C7EC400BEB762 /* NetworkClient.swift */,
 				579D5B012B3C7EEC00BEB762 /* NetworkService.swift */,
 				579D5B032B3C7F1B00BEB762 /* NetworkError.swift */,
-				579D5B052B3C7F2D00BEB762 /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -399,6 +432,7 @@
 			children = (
 				57E61F302B3F39F00099555A /* Pet.swift */,
 				57E61F362B3F3C720099555A /* PetDTO.swift */,
+				572BE5042B4064770039F1E6 /* AddPetDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -577,6 +611,7 @@
 				579D5B182B3C8DF500BEB762 /* SignupView.swift in Sources */,
 				577395092B3DD4DA00F002E6 /* PasswordTextField.swift in Sources */,
 				579D5B062B3C7F2D00BEB762 /* Endpoint.swift in Sources */,
+				572BE5052B4064770039F1E6 /* AddPetDTO.swift in Sources */,
 				579D5B1D2B3C9C5800BEB762 /* SplashView.swift in Sources */,
 				5773950F2B3DDFDE00F002E6 /* SignupFormView.swift in Sources */,
 				579D5B022B3C7EEC00BEB762 /* NetworkService.swift in Sources */,
@@ -589,6 +624,8 @@
 				579D5B1A2B3C914400BEB762 /* Colors.swift in Sources */,
 				5773950D2B3DDAAD00F002E6 /* ValidationError.swift in Sources */,
 				57E61F472B3F45330099555A /* PetStore+Stub.swift in Sources */,
+				572BE5102B406A790039F1E6 /* PostEndpoint.swift in Sources */,
+				572BE5082B4064D70039F1E6 /* Environment.swift in Sources */,
 				57E61F3E2B3F3E980099555A /* User+Environment.swift in Sources */,
 				577395052B3DC29400F002E6 /* SignupView+ViewModel.swift in Sources */,
 				579D5B042B3C7F1B00BEB762 /* NetworkError.swift in Sources */,
@@ -607,9 +644,11 @@
 				574663A22B3CAE6900EFF1F9 /* BaseTextField.swift in Sources */,
 				57E61F312B3F39F00099555A /* Pet.swift in Sources */,
 				57E61F1F2B3F29420099555A /* AsyncCachedImage.swift in Sources */,
+				572BE50E2B40664A0039F1E6 /* HTTPMethod.swift in Sources */,
 				57FA76D32B3F717800CACAD0 /* PetDetailView.swift in Sources */,
 				577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */,
 				57E61F452B3F451E0099555A /* PetStore+Environment.swift in Sources */,
+				572BE5122B406A980039F1E6 /* GetEndpoint.swift in Sources */,
 				57E61F422B3F3FA40099555A /* PetCarouselView.swift in Sources */,
 				577395002B3DC0B800F002E6 /* TextFieldState.swift in Sources */,
 				579D5AD12B3C7DF200BEB762 /* ios_cudiApp.swift in Sources */,
@@ -626,6 +665,7 @@
 				57769F4A2B3F9D4C008C894B /* AddPetView.swift in Sources */,
 				57E61F2B2B3F36AD0099555A /* ProfileListItem.swift in Sources */,
 				57E61F1B2B3F18AE0099555A /* ProfileView.swift in Sources */,
+				572BE50B2B4064EF0039F1E6 /* EnvironmentStore.swift in Sources */,
 				579D5B002B3C7EC400BEB762 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

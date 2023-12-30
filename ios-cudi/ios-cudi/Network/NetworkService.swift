@@ -8,8 +8,11 @@
 import Foundation
 
 protocol NetworkService: Sendable {
-    func fetchData(from endpoint: Endpoint) async throws -> Data
-    func fetch<T: Decodable>(from endpoint: Endpoint) async throws -> T
+    func fetchData<NetworkEndpoint: Endpoint>(
+        from endpoint: NetworkEndpoint
+    ) async throws -> Data
+    
+    func fetch<T: Decodable>(from endpoint: any Endpoint) async throws -> T
 }
 
 struct NetworkServiceImpl: NetworkService {
@@ -19,17 +22,15 @@ struct NetworkServiceImpl: NetworkService {
         self.client = client
     }
 
-    func fetchData(from endpoint: Endpoint) async throws -> Data {
-        guard 
-            let urlString = endpoint.urlString,
-            let url = URL(string: urlString)
-        else {
-            throw NetworkError.invalidURL
-        }
-        return try await client.fetch(url: url)
+    func fetchData<NetworkEndpoint: Endpoint>(
+        from endpoint: NetworkEndpoint
+    ) async throws -> Data {
+        let endpointInterpreter = EndpointInterpreter<NetworkEndpoint>(endpoint: endpoint)
+        let interpretedEndpoint = try endpointInterpreter.interpret()
+        return try await client.fetch(url: interpretedEndpoint.url)
     }
 
-    func fetch<T: Decodable>(from endpoint: Endpoint) async throws -> T {
+    func fetch<T: Decodable>(from endpoint: any Endpoint) async throws -> T {
         let data = try await fetchData(from: endpoint)
         return try JSONDecoder().decode(T.self, from: data)
     }
