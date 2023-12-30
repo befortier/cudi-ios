@@ -15,4 +15,5 @@ enum AppColor {
     static let textTertiary = Color("TextTertiary")
     static let background = Color("Background")
     static let backgroundAlt = Color("BackgroundAlt")
+    static let softBackground = Color("SoftBackground")
 }

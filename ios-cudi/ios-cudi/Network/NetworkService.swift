@@ -15,12 +15,15 @@ protocol NetworkService: Sendable {
 struct NetworkServiceImpl: NetworkService {
     private let client: NetworkClient
 
-    init(client: NetworkClient) {
+    init(client: NetworkClient = URLSessionClient()) {
         self.client = client
     }
 
     func fetchData(from endpoint: Endpoint) async throws -> Data {
-        guard let url = URL(string: endpoint.urlString) else {
+        guard 
+            let urlString = endpoint.urlString,
+            let url = URL(string: urlString)
+        else {
             throw NetworkError.invalidURL
         }
         return try await client.fetch(url: url)

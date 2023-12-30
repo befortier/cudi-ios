@@ -7,14 +7,18 @@
 
 import Foundation
 
-struct Endpoint: Sendable {
-    var baseURL: String
-    var path: String
-    var queryParameters: [String: String]?
-    var headers: [String: String]?
+protocol Endpoint: Sendable {
+    var baseURL: String { get }
+    var path: String { get }
+    var queryParameters: [String: String]? { get }
+    var headers: [String: String]? { get }
+}
 
-    var urlString: String {
-        var urlComponents = URLComponents(string: baseURL)!
+extension Endpoint {
+    var baseURL: String { "localhost" }
+    
+    var urlString: String? {
+        guard var urlComponents = URLComponents(string: baseURL) else { return nil }
         urlComponents.path += path
 
         if

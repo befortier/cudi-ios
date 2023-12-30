@@ -8,26 +8,15 @@
 import Foundation
 import SwiftUI
 
-struct CreateUserDTO: Equatable, Sendable, Encodable {
-    let userID = UUID().uuidString
-    let name: String
-    let email: String
-    let createdAt: Date = .now
-    let password: String
-    let cudiRelationship: CudiRelationship
-    let favoritePartAboutCudi: String
-}
-
 enum FormStatus: Equatable, Sendable {
     case idle
     case invalidSubmission
     case validSubmission(CreateUserDTO)
-    case editing
 }
 
 @MainActor
-struct FormView: View {
-    var form: Form
+struct SignupFormView: View {
+    var form: SignupForm
     @Binding var formStatus: FormStatus
     @State var errorMessage: String?
 
@@ -92,49 +81,6 @@ struct FormView: View {
                 .padding()
                 .background(Color.purple)
                 .cornerRadius(10)
-        }
-    }
-}
-
-extension FormView {
-    // TODO: Maybe a Model (with type: .signup) -> store in and refill if we get to the multipage like duo
-    @MainActor @Observable
-    class Form: Identifiable {
-        enum Identifier {
-            case signup
-        }
-        let id: Identifier
-
-        var emailState = TextFieldState(validator: EmailValidator())
-        var passwordState = TextFieldState(validator: PasswordValidator())
-        var nameState = TextFieldState(validator: PasswordValidator())
-        var cudiRelationship: CudiRelationship = .father
-        var favoriteCudiThing: String = ""
-
-        init(id: Identifier) {
-            self.id = id
-        }
-
-        func validate() -> Bool {
-            [emailState, passwordState, nameState]
-                .allSatisfy {
-                    $0.validate()
-                    return $0.isValid
-                }
-        }
-
-        func attemptSubmission() -> FormStatus {
-            self.validate() ?
-                .validSubmission(
-                    CreateUserDTO(
-                        name: self.nameState.text,
-                        email: self.emailState.text,
-                        password: self.passwordState.text,
-                        cudiRelationship: self.cudiRelationship,
-                        favoritePartAboutCudi: self.favoriteCudiThing
-                    )
-                ) :
-                .invalidSubmission
         }
     }
 }

@@ -15,6 +15,7 @@ struct MainTabView: View {
     @State private var selectedTab = Tab.activityFeed
     @Environment(\.modelContext) var modelContext: ModelContext
     @Environment(\.user) var user: User
+    @Environment(\.petStore) var petStore: PetStore
 
     @AppStorage(UserDefaultKey.currentUserID.rawValue)
     private var currentUserID: String?
@@ -45,6 +46,10 @@ struct MainTabView: View {
                         Image(systemName: "person.fill")
                     }
                     .tag(Tab.profile)
+
+            }
+            .onFirstAppear {
+                Task { try? await petStore.loadPets() }
             }
             .accentColor(AppColor.textPrimary) // Customize accent color (optional)
         }
@@ -52,9 +57,13 @@ struct MainTabView: View {
 }
 
 struct ActivityFeedListView: View {
+    @Environment(\.petStore) var petStore: PetStore
+
     var body: some View {
-        NavigationView {
-            Text("content")
+        NavigationStack {
+            Button("Clear pets") {
+                petStore.removePets()
+            }
                 .navigationTitle("Activity Feed")
         }
     }
@@ -62,7 +71,7 @@ struct ActivityFeedListView: View {
 
 struct StaysListView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Text("content")
                 .navigationTitle("Stays")
         }
@@ -71,5 +80,5 @@ struct StaysListView: View {
 
 #Preview {
     MainTabView()
-        .setUser(.stub)
+        .setAppState(.stub())
 }

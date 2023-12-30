@@ -18,11 +18,20 @@ struct RootView: View {
     @Environment(\.modelContext) var modelContext
     @Query private var users: [User]
 
+    @State private var appState: AppState?
+
     var body: some View {
         Group {
             if let user = users.first {
+                let appState = appState ?? AppState(
+                    modelContext: modelContext,
+                    user: user
+                )
                 MainTabView()
-                    .setUser(user)
+                    .setAppState(appState)
+                    .onFirstAppear {
+                        self.appState = appState
+                    }
             } else if let userID = currentUserID {
                 fetchRemoteUserProgressView(userID: userID)
             } else {
@@ -39,9 +48,7 @@ struct RootView: View {
                 do {
                     let user = try await viewModel.restoreCurrentUser(userID: userID)
                     modelContext.insert(user)
-                } catch {
-                    print("ERROR")
-                }
+                } catch {}
             }
     }
 }
@@ -53,8 +60,14 @@ extension RootView {
         init() {}
 
         func restoreCurrentUser(userID: String) async throws -> User {
-            print("HERE RESTORING")
             return .stub
         }
     }
+}
+
+
+#Preview {
+    RootView()
+        .modelContainer(for: User.self, inMemory: true)
+        .modelContainer(for: Pet.self, inMemory: true)
 }

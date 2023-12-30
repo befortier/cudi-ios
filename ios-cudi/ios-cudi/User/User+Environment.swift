@@ -19,9 +19,14 @@ extension EnvironmentValues {
   }
 }
 
-
-extension View {
-  func setUser(_ user: User) -> some View {
-    environment(\.user, user)
-  }
-}
+//@MainActor
+//private struct UserStoreEnvironmentKey: EnvironmentKey {
+//    static let defaultValue = UserStore.stub
+//}
+//
+//extension EnvironmentValues {
+//  var userStore: UserStore {
+//    get { self[UserStoreEnvironmentKey.self] }
+//    set { self[UserStoreEnvironmentKey.self] = newValue }
+//  }
+//}

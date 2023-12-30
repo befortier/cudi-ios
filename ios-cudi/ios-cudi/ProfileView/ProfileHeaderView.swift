@@ -8,26 +8,16 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 struct ProfileHeaderView: View {
     @Environment(\.user) var user: User
 
     var body: some View {
         VStack(spacing: 16) {
             HStack(spacing: 16) {
-                AsyncCachedImage(url: user.avatarURL) {
-                    Circle()
-                        .fill(.gray)
-                        .modifier(ShimmerModifier())
-                }
-                .frame(width: 70, height: 70)
-                .clipShape(Circle())
-                .overlay(
-                    Circle()
-                        .stroke(
-                            Color.gray.opacity(0.2),
-                            lineWidth: 2
-                        )
-                )
+                CircleImageView(imageURL: user.avatarURL)
+                    .frame(width: 90, height: 90)
+
                 VStack(alignment: .leading, spacing: 4) {
                     Text(user.name)
                         .font(.title2)
@@ -39,16 +29,10 @@ struct ProfileHeaderView: View {
                 }
             }
         }
-        .padding(.vertical, 32)
-        .padding(.bottom, 16)
-        .frame(maxWidth: .infinity)
-        .background(
-            LandingBackgroundView().ignoresSafeArea()
-        )
     }
 }
 
 #Preview {
     ProfileHeaderView()
-        .setUser(.stub)
+        .setAppState(.stub())
 }

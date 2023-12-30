@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 final class User: Identifiable, Equatable {
-    @Relationship(.unique) var id: String
+    @Attribute(.unique) var id: String
     var name: String
     var email: String
     var createdAt: Date
