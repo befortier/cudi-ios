@@ -10,6 +10,7 @@ import SwiftData
 import SwiftUI
 @MainActor @Observable
 class PetStore {
+    
     private var petRefreshTask: Task<[PetDTO], any Error>?
     private let petServiceAPIClient = PetServiceAPIClient()
     private let modelContext: ModelContext
@@ -33,10 +34,16 @@ class PetStore {
         guard petRefreshTask == nil else { return }
         let petRefreshTask = Task { try await petServiceAPIClient.getPets() }
         self.petRefreshTask = petRefreshTask
-        let pets = try await petRefreshTask.value
-        self.pets = pets.map { Pet(petDTO: $0) }
-        self.pets.forEach { modelContext.insert($0) }
-        try modelContext.save()
+        let petDTOs = try await petRefreshTask.value
+        let pets = petDTOs.map { Pet(petDTO: $0) }
+
+        // remove any pets that are not in source of truth
+        let noLongerExistingPets = Set(self.pets).subtracting(Set(pets))
+        noLongerExistingPets.forEach { modelContext.delete($0) }
+
+        pets.forEach { modelContext.insert($0) }
+        self.pets = pets
+
         self.petRefreshTask = nil
     }
 
@@ -52,5 +59,10 @@ class PetStore {
             modelContext.delete($0)
         }
         self.pets = []
+    }
+
+    func removePet(pet: Pet) {
+        modelContext.delete(pet)
+        self.pets = self.pets.filter { $0 != pet }
     }
 }

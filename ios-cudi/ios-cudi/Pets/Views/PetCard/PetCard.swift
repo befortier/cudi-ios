@@ -26,7 +26,7 @@ struct PetCard: View {
         if let avatarURL = pet.avatarURL {
             self.imageContentType = .remote(avatarURL)
         } else {
-            self.imageContentType = .systemName("pawprint")
+            self.imageContentType = .systemName(pet.type.rawValue)
         }
     }
 
