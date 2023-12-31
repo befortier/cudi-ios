@@ -6,17 +6,18 @@
 //
 
 import Foundation
+import SwiftData
 
 @MainActor
 extension PetStore {
-    static var stub: PetStore {
+    static func stub(modelContext: ModelContext) -> PetStore {
         let petDTOs = [
             PetDTO.cudi,
             PetDTO(id: "ranom", name: "Brisco", type: .dog, birthdate: .now, avatarURL: nil),
             PetDTO(id: "ranom2", name: "Catto", type: .cat, birthdate: .now, avatarURL: nil),
         ]
         return PetStore(
-            modelContext: try! .init(.init(for: Pet.self, configurations: .init(isStoredInMemoryOnly: true))),
+            modelContext: modelContext,
             user: .stub,
             pets: petDTOs.map { Pet(petDTO: $0) }
         )

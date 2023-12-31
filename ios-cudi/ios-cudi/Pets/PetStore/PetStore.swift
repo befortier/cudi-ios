@@ -25,7 +25,6 @@ class PetStore {
     ) {
         self.modelContext = modelContext
         self.user = user
-
         let cachedPets = try? modelContext.fetch(FetchDescriptor<Pet>())
         self.pets = pets ?? cachedPets ?? []
     }

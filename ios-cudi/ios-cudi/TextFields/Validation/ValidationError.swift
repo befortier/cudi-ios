@@ -33,7 +33,6 @@ enum ValidationError: LocalizedError, Equatable {
             NSLocalizedString("Birthday must be of MM/DD/YYYY format", comment: "Invalid birthday")
         case .general:
             NSLocalizedString("The field was invalid", comment: "Invalid field")
-
         }
     }
 }

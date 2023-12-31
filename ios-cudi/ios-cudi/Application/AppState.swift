@@ -41,7 +41,7 @@ extension AppState {
     ) -> AppState {
         AppState(
             user: user ?? .stub,
-            petStore: petStore ?? .stub
+            petStore: petStore ?? .stub(modelContext: DataController.previewContainer.mainContext)
         )
     }
 }

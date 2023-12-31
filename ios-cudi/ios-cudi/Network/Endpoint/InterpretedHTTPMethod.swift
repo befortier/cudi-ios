@@ -1,5 +1,5 @@
 //
-//  Method.swift
+//  InterpretedHTTPMethod.swift
 //  ios-cudi
 //
 //  Created by Ben Fortier on 12/30/23.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum HTTPMethod: Sendable, Equatable {
+enum InterpretedHTTPMethod {
     case get
-    case post
+    case post(Data?)
     case delete
 }

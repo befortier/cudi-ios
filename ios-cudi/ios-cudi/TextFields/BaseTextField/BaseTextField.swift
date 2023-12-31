@@ -114,7 +114,7 @@ import SwiftUI
         BaseTextField("Email", textFieldState: .init(wrappedValue: emptyTextFieldState), accessoryItem: { EmptyView() })
 
         Button("Validate") {
-            [validTextFieldState, errorTextFieldState, emptyTextFieldState].forEach { $0.validate() }
+            [validTextFieldState, errorTextFieldState, emptyTextFieldState].forEach { _ = $0.validate() }
         }
     }
     .padding()

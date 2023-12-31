@@ -8,11 +8,10 @@
 import Foundation
 import SwiftUI
 
-
 @MainActor
 struct PetCard: View {
     private let cornerRadius: CGFloat = 12
-    private let aspectRatio: CGFloat = 0.8
+    private let aspectRatio: CGFloat = 0.85
     @Environment(\.petCardSize) private var  petCardSize
 
     private let pet: Pet?
@@ -44,13 +43,13 @@ struct PetCard: View {
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
         .foregroundStyle(AppColor.textPrimary)
         .frame(width: petCardSize.rawValue, height: petCardSize.rawValue * aspectRatio)
+        .shadow(color: Color.gray.opacity(0.2), radius: 3, x: 0, y: 3)
     }
 
     private var image: some View {
         ContentImage(contentType: imageContentType)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay(imageCardShape.stroke(.gray, lineWidth: 0.5))
-            .shadow(color: Color.gray.opacity(0.2), radius: 3, x: 0, y: 3)
     }
 
     private var titleView: some View {
@@ -72,23 +71,18 @@ struct PetCard: View {
 }
 
 #Preview {
-    let container = previewModelContainer
+    let container = DataController.previewContainer
     let cudi = Pet(petDTO: .cudi)
     let url = URL(string: "gogole.com")!
     cudi.avatarURL = url
-    return HStack {
+    return HStack(spacing: 8) {
         PetCard(pet: cudi)
             .aspectRatio(contentMode: .fill)
             .setPetCardSize(.small)
             .task {
                 await InMemoryCache.shared.set(UIImage(named: "cudi"), for: url)
             }
-
-        PetCard(pet: Pet(petDTO: .brisco))
-            .setPetCardSize(.small)
-            .task {
-                await InMemoryCache.shared.set(UIImage(named: "cudi"), for: url)
-            }
+        Spacer()
 
         PetCard()
             .setPetCardSize(.medium)

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct EmailValidator: TextFieldValidator {
     typealias Email = String
     func validate(text: String) throws -> Email {

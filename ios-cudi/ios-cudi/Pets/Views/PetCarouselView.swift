@@ -44,7 +44,7 @@ struct ScrollablePetList: View {
 import SwiftData
 
 #Preview {
-    let container = previewModelContainer
+    let container = DataController.previewContainer
 
     let pets = [PetDTO.cudi].map { Pet(petDTO: $0 )}
     return NavigationStack {

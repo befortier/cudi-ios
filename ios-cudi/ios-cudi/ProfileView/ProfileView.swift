@@ -64,10 +64,11 @@ struct ProfileView: View {
             .shadow(color: Color.gray.opacity(0.3), radius: 5, x: 0, y: 5)
     }
 }
+import SwiftData
 
 #Preview {
-    let container = previewModelContainer
-    
+    let previewModelContainer = DataController.previewContainer
     return ProfileView()
-        .modelContainer(container)
+        .modelContainer(previewModelContainer)
+        .setAppState(.stub())
 }

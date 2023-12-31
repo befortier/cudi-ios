@@ -10,7 +10,7 @@
 		572BE5052B4064770039F1E6 /* AddPetDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5042B4064770039F1E6 /* AddPetDTO.swift */; };
 		572BE5082B4064D70039F1E6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5072B4064D70039F1E6 /* Environment.swift */; };
 		572BE50B2B4064EF0039F1E6 /* EnvironmentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE50A2B4064EF0039F1E6 /* EnvironmentStore.swift */; };
-		572BE50E2B40664A0039F1E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE50D2B40664A0039F1E6 /* HTTPMethod.swift */; };
+		572BE50E2B40664A0039F1E6 /* InterpretedHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE50D2B40664A0039F1E6 /* InterpretedHTTPMethod.swift */; };
 		572BE5102B406A790039F1E6 /* PostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE50F2B406A790039F1E6 /* PostEndpoint.swift */; };
 		572BE5122B406A980039F1E6 /* GetEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5112B406A980039F1E6 /* GetEndpoint.swift */; };
 		572BE5152B40705A0039F1E6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE5142B40705A0039F1E6 /* ImagePickerView.swift */; };
@@ -26,6 +26,8 @@
 		5751F8482B40E0ED00F26C45 /* AvatarDomainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8472B40E0ED00F26C45 /* AvatarDomainType.swift */; };
 		5751F84A2B40E29C00F26C45 /* CircleImageView+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8492B40E29C00F26C45 /* CircleImageView+Environment.swift */; };
 		5769DC082B41F8D6001B98F5 /* BirthdayValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC072B41F8D6001B98F5 /* BirthdayValidator.swift */; };
+		5769DC0A2B420552001B98F5 /* InterpretedEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC092B420552001B98F5 /* InterpretedEndpoint.swift */; };
+		5769DC0C2B420575001B98F5 /* EndpointInterpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC0B2B420575001B98F5 /* EndpointInterpreter.swift */; };
 		577394FC2B3DC00500F002E6 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */; };
 		577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FD2B3DC01000F002E6 /* EmailValidator.swift */; };
 		577395002B3DC0B800F002E6 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FF2B3DC0B800F002E6 /* TextFieldState.swift */; };
@@ -110,7 +112,7 @@
 		572BE5042B4064770039F1E6 /* AddPetDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetDTO.swift; sourceTree = "<group>"; };
 		572BE5072B4064D70039F1E6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		572BE50A2B4064EF0039F1E6 /* EnvironmentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentStore.swift; sourceTree = "<group>"; };
-		572BE50D2B40664A0039F1E6 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		572BE50D2B40664A0039F1E6 /* InterpretedHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretedHTTPMethod.swift; sourceTree = "<group>"; };
 		572BE50F2B406A790039F1E6 /* PostEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpoint.swift; sourceTree = "<group>"; };
 		572BE5112B406A980039F1E6 /* GetEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEndpoint.swift; sourceTree = "<group>"; };
 		572BE5142B40705A0039F1E6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,8 @@
 		5751F8472B40E0ED00F26C45 /* AvatarDomainType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarDomainType.swift; sourceTree = "<group>"; };
 		5751F8492B40E29C00F26C45 /* CircleImageView+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircleImageView+Environment.swift"; sourceTree = "<group>"; };
 		5769DC072B41F8D6001B98F5 /* BirthdayValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayValidator.swift; sourceTree = "<group>"; };
+		5769DC092B420552001B98F5 /* InterpretedEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretedEndpoint.swift; sourceTree = "<group>"; };
+		5769DC0B2B420575001B98F5 /* EndpointInterpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointInterpreter.swift; sourceTree = "<group>"; };
 		577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		577394FD2B3DC01000F002E6 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		577394FF2B3DC0B800F002E6 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
@@ -230,9 +234,11 @@
 			isa = PBXGroup;
 			children = (
 				579D5B052B3C7F2D00BEB762 /* Endpoint.swift */,
-				572BE50D2B40664A0039F1E6 /* HTTPMethod.swift */,
+				572BE50D2B40664A0039F1E6 /* InterpretedHTTPMethod.swift */,
 				572BE50F2B406A790039F1E6 /* PostEndpoint.swift */,
 				572BE5112B406A980039F1E6 /* GetEndpoint.swift */,
+				5769DC092B420552001B98F5 /* InterpretedEndpoint.swift */,
+				5769DC0B2B420575001B98F5 /* EndpointInterpreter.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -307,6 +313,27 @@
 				5751F8452B40E0D600F26C45 /* ImageContentType.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		5769DC0D2B420674001B98F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5769DC0E2B420678001B98F5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5769DC0F2B42067D001B98F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		577394FA2B3DBFF800F002E6 /* Validation */ = {
@@ -423,6 +450,9 @@
 		579D5AFE2B3C7E6F00BEB762 /* ActivityFeed */ = {
 			isa = PBXGroup;
 			children = (
+				5769DC0F2B42067D001B98F5 /* Views */,
+				5769DC0E2B420678001B98F5 /* Network */,
+				5769DC0D2B420674001B98F5 /* Models */,
 			);
 			path = ActivityFeed;
 			sourceTree = "<group>";
@@ -760,11 +790,12 @@
 				574663A22B3CAE6900EFF1F9 /* BaseTextField.swift in Sources */,
 				57E61F312B3F39F00099555A /* Pet.swift in Sources */,
 				57E61F1F2B3F29420099555A /* AsyncCachedImage.swift in Sources */,
-				572BE50E2B40664A0039F1E6 /* HTTPMethod.swift in Sources */,
+				572BE50E2B40664A0039F1E6 /* InterpretedHTTPMethod.swift in Sources */,
 				57FA76D32B3F717800CACAD0 /* PetDetailView.swift in Sources */,
 				577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */,
 				57E61F452B3F451E0099555A /* PetStore+Environment.swift in Sources */,
 				572BE5122B406A980039F1E6 /* GetEndpoint.swift in Sources */,
+				5769DC0C2B420575001B98F5 /* EndpointInterpreter.swift in Sources */,
 				57E61F422B3F3FA40099555A /* PetCarouselView.swift in Sources */,
 				577395002B3DC0B800F002E6 /* TextFieldState.swift in Sources */,
 				579D5AD12B3C7DF200BEB762 /* ios_cudiApp.swift in Sources */,
@@ -787,6 +818,7 @@
 				57E61F2B2B3F36AD0099555A /* ProfileListItem.swift in Sources */,
 				57C5C31A2B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift in Sources */,
 				5751F8412B40A10400F26C45 /* CircleCardSize.swift in Sources */,
+				5769DC0A2B420552001B98F5 /* InterpretedEndpoint.swift in Sources */,
 				57C5C32A2B41EEDF00FC2707 /* BirthdayTextField.swift in Sources */,
 				57E61F1B2B3F18AE0099555A /* ProfileView.swift in Sources */,
 				572BE50B2B4064EF0039F1E6 /* EnvironmentStore.swift in Sources */,

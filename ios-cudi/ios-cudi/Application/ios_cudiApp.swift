@@ -32,14 +32,23 @@ var sharedModelContainer: ModelContainer = {
     }
 }()
 
-var previewModelContainer: ModelContainer {
-    let schema = Schema([
-        Pet.self,
-        User.self
-    ])
-    let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
-    let container = try! ModelContainer(for: schema, configurations: [config])
-    return container
+
+@MainActor
+class DataController {
+    static var previewContainer: ModelContainer = {
+        do {
+            let schema = Schema([
+                Pet.self,
+                User.self
+            ])
+            let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+            let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
+//            container.mainContext.insert(User.stub)
+            return container
+        } catch {
+            fatalError("Failed to create model container for previewing: \(error.localizedDescription)")
+        }
+    }()
 }
 
 

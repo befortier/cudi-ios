@@ -42,7 +42,7 @@ struct ProfileHeaderView: View {
 }
 
 #Preview {
-    let container = previewModelContainer
+    let container = DataController.previewContainer
     return ProfileHeaderView()
         .modelContainer(container)
 }

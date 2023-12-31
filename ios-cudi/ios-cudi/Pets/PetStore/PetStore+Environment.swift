@@ -10,7 +10,10 @@ import SwiftUI
 
 @MainActor
 private struct PetStoreEnvironmentKey: EnvironmentKey {
-    static let defaultValue = PetStore(modelContext: sharedModelContainer.mainContext, user: .stub)
+    static let defaultValue = PetStore(
+        modelContext: DataController.previewContainer.mainContext,
+        user: .stub
+    )
 }
 
 extension EnvironmentValues {
