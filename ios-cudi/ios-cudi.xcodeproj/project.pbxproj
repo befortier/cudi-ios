@@ -58,6 +58,9 @@
 		579D5B1D2B3C9C5800BEB762 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D5B1C2B3C9C5800BEB762 /* SplashView.swift */; };
 		579D5B1F2B3CA9D600BEB762 /* LandingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D5B1E2B3CA9D600BEB762 /* LandingBackgroundView.swift */; };
 		57C5C3182B41B09C00FC2707 /* EditableAvatarView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C3172B41B09C00FC2707 /* EditableAvatarView+ViewModel.swift */; };
+		57C5C31A2B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C3192B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift */; };
+		57C5C31D2B41B8F300FC2707 /* PetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C31C2B41B8F300FC2707 /* PetForm.swift */; };
+		57C5C31F2B41BB2500FC2707 /* NameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C31E2B41BB2500FC2707 /* NameValidator.swift */; };
 		57E61F182B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F172B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift */; };
 		57E61F1B2B3F18AE0099555A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F1A2B3F18AE0099555A /* ProfileView.swift */; };
 		57E61F1F2B3F29420099555A /* AsyncCachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F1E2B3F29420099555A /* AsyncCachedImage.swift */; };
@@ -154,6 +157,9 @@
 		579D5B1C2B3C9C5800BEB762 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		579D5B1E2B3CA9D600BEB762 /* LandingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingBackgroundView.swift; sourceTree = "<group>"; };
 		57C5C3172B41B09C00FC2707 /* EditableAvatarView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditableAvatarView+ViewModel.swift"; sourceTree = "<group>"; };
+		57C5C3192B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MinimalistNavBar+ViewModifier.swift"; sourceTree = "<group>"; };
+		57C5C31C2B41B8F300FC2707 /* PetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetForm.swift; sourceTree = "<group>"; };
+		57C5C31E2B41BB2500FC2707 /* NameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidator.swift; sourceTree = "<group>"; };
 		57E61F172B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnFirstAppear+ViewModifier.swift"; sourceTree = "<group>"; };
 		57E61F1A2B3F18AE0099555A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		57E61F1E2B3F29420099555A /* AsyncCachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncCachedImage.swift; sourceTree = "<group>"; };
@@ -301,6 +307,7 @@
 				577394FD2B3DC01000F002E6 /* EmailValidator.swift */,
 				577395062B3DD10200F002E6 /* PasswordValidator.swift */,
 				5773950C2B3DDAAD00F002E6 /* ValidationError.swift */,
+				57C5C31E2B41BB2500FC2707 /* NameValidator.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -458,11 +465,21 @@
 			path = AvatarView;
 			sourceTree = "<group>";
 		};
+		57C5C31B2B41B87B00FC2707 /* CreatePet */ = {
+			isa = PBXGroup;
+			children = (
+				57769F492B3F9D4C008C894B /* CreatePetView.swift */,
+				57C5C31C2B41B8F300FC2707 /* PetForm.swift */,
+			);
+			path = CreatePet;
+			sourceTree = "<group>";
+		};
 		57E61F162B3DF6980099555A /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
 				57E61F172B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift */,
 				57E61F282B3F33460099555A /* Shimmer+ViewModifier.swift */,
+				57C5C3192B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -522,11 +539,11 @@
 		57E61F3F2B3F3F4B0099555A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				57C5C31B2B41B87B00FC2707 /* CreatePet */,
 				5751F8442B40A5DE00F26C45 /* PetSelection */,
 				57E61F412B3F3FA40099555A /* PetCarouselView.swift */,
 				57FA76D02B3F707200CACAD0 /* PetCard.swift */,
 				57FA76D22B3F717800CACAD0 /* PetDetailView.swift */,
-				57769F492B3F9D4C008C894B /* CreatePetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -688,6 +705,7 @@
 				579D5B1D2B3C9C5800BEB762 /* SplashView.swift in Sources */,
 				5773950F2B3DDFDE00F002E6 /* SignupFormView.swift in Sources */,
 				579D5B022B3C7EEC00BEB762 /* NetworkService.swift in Sources */,
+				57C5C31D2B41B8F300FC2707 /* PetForm.swift in Sources */,
 				574663A42B3CAE8600EFF1F9 /* BaseTextField+Environment.swift in Sources */,
 				57E61F2D2B3F38E70099555A /* CircleImageView.swift in Sources */,
 				577395032B3DC21800F002E6 /* CudiRelationshipPickerView.swift in Sources */,
@@ -735,6 +753,7 @@
 				579D5B162B3C86B400BEB762 /* UserDefaults+PropertyWrapper.swift in Sources */,
 				572BE5152B40705A0039F1E6 /* ImagePickerView.swift in Sources */,
 				57E61F292B3F33460099555A /* Shimmer+ViewModifier.swift in Sources */,
+				57C5C31F2B41BB2500FC2707 /* NameValidator.swift in Sources */,
 				57E61F182B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift in Sources */,
 				5773950B2B3DD51300F002E6 /* NameTextField.swift in Sources */,
 				5751F8462B40E0D600F26C45 /* ImageContentType.swift in Sources */,
@@ -743,6 +762,7 @@
 				57E61F212B3F29880099555A /* ProfileHeaderView.swift in Sources */,
 				57769F4A2B3F9D4C008C894B /* CreatePetView.swift in Sources */,
 				57E61F2B2B3F36AD0099555A /* ProfileListItem.swift in Sources */,
+				57C5C31A2B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift in Sources */,
 				5751F8412B40A10400F26C45 /* CircleCardSize.swift in Sources */,
 				57E61F1B2B3F18AE0099555A /* ProfileView.swift in Sources */,
 				572BE50B2B4064EF0039F1E6 /* EnvironmentStore.swift in Sources */,

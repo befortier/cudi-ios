@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 @MainActor @Observable
 class SignupForm: Identifiable {
+    var image: UIImage?
     var emailState = TextFieldState(validator: EmailValidator())
     var passwordState = TextFieldState(validator: PasswordValidator())
-    var nameState = TextFieldState(validator: PasswordValidator())
+    var nameState = TextFieldState(validator: NameValidator())
     var cudiRelationship: CudiRelationship = .father
     var favoriteCudiThing: String = ""
 

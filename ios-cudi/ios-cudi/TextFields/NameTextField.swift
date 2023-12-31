@@ -11,6 +11,7 @@ import SwiftUI
 @MainActor
 struct NameTextField: View {
     @Bindable var textFieldState: TextFieldState
+    var domainType: AvatarDomainType
 
     var body: some View {
         BaseTextField(
@@ -18,7 +19,7 @@ struct NameTextField: View {
             textFieldState: $textFieldState,
             errorColor: .red
         ) {
-            Image(systemName: "person")
+            Image(systemName: domainType.systemName)
                 .renderingMode(.template)
                 .foregroundColor(.gray)
 

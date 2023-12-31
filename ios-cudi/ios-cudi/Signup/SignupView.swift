@@ -24,17 +24,7 @@ struct SignupView: View {
                 .padding()
         }
         .navigationTitle("Sign Up")
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button(action: {
-                    dismiss()
-                }) {
-                    Image(systemName: "arrow.left")
-                        .tint(.primary)
-                }
-            }
-        }
+        .minamlistNavBar()
         .navigationDestination(item: $viewModel.user) { user in
             MainTabView()
         }

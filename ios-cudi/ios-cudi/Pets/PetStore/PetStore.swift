@@ -40,6 +40,13 @@ class PetStore {
         self.petRefreshTask = nil
     }
 
+    func addPet(pet: AddPetDTO) async throws {
+        let petDTO = try await petServiceAPIClient.addPet(addPetDTO: pet)
+        let pet = Pet(petDTO: petDTO)
+        pets.append(pet)
+        modelContext.insert(pet)
+    }
+
     func removePets() {
         self.pets.forEach { 
             modelContext.delete($0)

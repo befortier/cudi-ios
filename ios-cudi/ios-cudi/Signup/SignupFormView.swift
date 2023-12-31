@@ -19,18 +19,16 @@ struct SignupFormView: View {
     var form: SignupForm
     @Binding var formStatus: FormStatus
     @State var errorMessage: String?
-    @State private var showImagePicker = false
-    @State private var selectedImage: UIImage?
 
     var body: some View {
         VStack(alignment: .center, spacing: 24) {
             EditableAvatarView(
-                selectedImage: $selectedImage,
+                selectedImage: Binding<UIImage?>(get: { form.image }, set: { form.image = $0 }),
                 domain: .person
             )
             .setCircleCardSize(.large)
 
-            NameTextField(textFieldState: form.nameState)
+            NameTextField(textFieldState: form.nameState, domainType: .person)
 
             EmailTextField(textFieldState: form.emailState)
                 .onChange(of: form.emailState.error) { _, newError in
@@ -92,7 +90,6 @@ struct SignupFormView: View {
         }
     }
 }
-
 
 #Preview {
     NavigationStack {

@@ -10,32 +10,36 @@ import SwiftUI
 
 @MainActor
 struct CreatePetView: View {
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.petStore) var petStore
     private let imageDiameter: CGFloat = 100
-    @State var selectedImage: UIImage?
-    @State var selectedPetType: PetType = .dog
-    @State var nameField: TextFieldState = TextFieldState(validator: PasswordValidator())
+    var form: PetForm
 
     var body: some View {
         VStack {
             addImageSection
                 .padding(.bottom, 16)
             VStack(spacing: 16) {
-                PetTypeSelectionView(selectedPetType: $selectedPetType)
-                    .padding(.bottom, 16)
-                NameTextField(textFieldState: nameField)
+                PetTypeSelectionView(
+                    selectedPetType: Binding<PetType>(get: { form.selectedPetType }, set: { form.selectedPetType = $0 })
+                )
+                .padding(.bottom, 16)
+
+                NameTextField(textFieldState: form.nameState, domainType: .pet(form.selectedPetType))
                 Spacer()
                 submitButton
                     .padding(.bottom, 32)
             }
             .padding(.horizontal, 16)
         }
+        .minamlistNavBar()
         .background(AppColor.softBackground) // TODO: Back some background with bones/wiskers...
     }
 
     private var addImageSection: some View {
         EditableAvatarView(
-            selectedImage: $selectedImage,
-            petType: selectedPetType
+            selectedImage: Binding<UIImage?>(get: { form.image }, set: { form.image = $0 }),
+            petType: form.selectedPetType
         )
         .frame(width: imageDiameter, height: imageDiameter)
         .foregroundStyle(.gray)
@@ -48,7 +52,14 @@ struct CreatePetView: View {
 
     private var submitButton: some View {
         Button {
-//            self.formStatus = form.attemptSubmission()
+            guard let addPetDTO = form.attemptSubmission() else {
+                return
+            }
+
+            Task {
+                try await petStore.addPet(pet: addPetDTO)
+                dismiss()
+            }
         } label: {
             Text("Add")
                 .font(.headline)
@@ -70,5 +81,5 @@ struct PetFormView: View {
 
 
 #Preview {
-    CreatePetView()
+    CreatePetView(form: .init())
 }

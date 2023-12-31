@@ -10,8 +10,8 @@ import Foundation
 struct PetServiceAPIClient {
     let httpClient = NetworkServiceImpl()
 
-    func addPet() async throws {
-        
+    func addPet(addPetDTO: AddPetDTO) async throws -> PetDTO {
+        PetDTO(id: "new-pet", name: addPetDTO.name, type: addPetDTO.type, birthdate: addPetDTO.birthdate, avatarURL: nil)
     }
     
     func removePet() async throws {
@@ -29,7 +29,7 @@ struct PetServiceAPIClient {
     }
 }
 
-struct GetPetsEndpoint: Endpoint {
+struct GetPetsEndpoint: GetEndpoint {
     var path: String = ""
 
     var queryParameters: [String : String]? { nil }

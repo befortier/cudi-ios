@@ -20,4 +20,6 @@ extension PetDTO {
     static let brisco = PetDTO(id: "some-id-1", name: "Brisco", type: .dog, birthdate: .now, avatarURL: nil)
     static let gatto = PetDTO(id: "some-id2", name: "Gatto", type: .cat, birthdate: .now, avatarURL: nil)
     static let brodie = PetDTO(id: "some-id3", name: "Brodie", type: .dog, birthdate: .now, avatarURL: nil)
+
+    static let new = PetDTO(id: "some-id4", name: "New", type: .cat, birthdate: .now, avatarURL: nil)
 }
