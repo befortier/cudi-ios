@@ -10,7 +10,7 @@ import SwiftUI
 
 @MainActor
 struct NameTextField: View {
-    @Bindable var textFieldState: TextFieldState
+    @Bindable var textFieldState: TextFieldState<String>
     var domainType: AvatarDomainType
 
     var body: some View {

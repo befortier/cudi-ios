@@ -16,7 +16,7 @@ enum ValidationError: LocalizedError, Equatable {
     case requiresOneCapitalAndOneSpecialChar
 
     case emptyName
-
+    case invalidBirthday
     case general
 
     var errorDescription: String? {
@@ -29,6 +29,8 @@ enum ValidationError: LocalizedError, Equatable {
             NSLocalizedString("The password needs a special char", comment: "Invalid password")
         case .emptyName:
             NSLocalizedString("Name cannot be empty", comment: "Invalid password")
+        case .invalidBirthday:
+            NSLocalizedString("Birthday must be of MM/DD/YYYY format", comment: "Invalid birthday")
         case .general:
             NSLocalizedString("The field was invalid", comment: "Invalid field")
 

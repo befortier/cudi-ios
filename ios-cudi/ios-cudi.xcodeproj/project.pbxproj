@@ -25,6 +25,7 @@
 		5751F8462B40E0D600F26C45 /* ImageContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8452B40E0D600F26C45 /* ImageContentType.swift */; };
 		5751F8482B40E0ED00F26C45 /* AvatarDomainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8472B40E0ED00F26C45 /* AvatarDomainType.swift */; };
 		5751F84A2B40E29C00F26C45 /* CircleImageView+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751F8492B40E29C00F26C45 /* CircleImageView+Environment.swift */; };
+		5769DC082B41F8D6001B98F5 /* BirthdayValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC072B41F8D6001B98F5 /* BirthdayValidator.swift */; };
 		577394FC2B3DC00500F002E6 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */; };
 		577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FD2B3DC01000F002E6 /* EmailValidator.swift */; };
 		577395002B3DC0B800F002E6 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FF2B3DC0B800F002E6 /* TextFieldState.swift */; };
@@ -63,6 +64,7 @@
 		57C5C31F2B41BB2500FC2707 /* NameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C31E2B41BB2500FC2707 /* NameValidator.swift */; };
 		57C5C3262B41D01900FC2707 /* ContentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C3252B41D01900FC2707 /* ContentImage.swift */; };
 		57C5C3282B41DA6400FC2707 /* PetCard+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C3272B41DA6400FC2707 /* PetCard+Environment.swift */; };
+		57C5C32A2B41EEDF00FC2707 /* BirthdayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C3292B41EEDF00FC2707 /* BirthdayTextField.swift */; };
 		57E61F182B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F172B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift */; };
 		57E61F1B2B3F18AE0099555A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F1A2B3F18AE0099555A /* ProfileView.swift */; };
 		57E61F1F2B3F29420099555A /* AsyncCachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F1E2B3F29420099555A /* AsyncCachedImage.swift */; };
@@ -123,6 +125,7 @@
 		5751F8452B40E0D600F26C45 /* ImageContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContentType.swift; sourceTree = "<group>"; };
 		5751F8472B40E0ED00F26C45 /* AvatarDomainType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarDomainType.swift; sourceTree = "<group>"; };
 		5751F8492B40E29C00F26C45 /* CircleImageView+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircleImageView+Environment.swift"; sourceTree = "<group>"; };
+		5769DC072B41F8D6001B98F5 /* BirthdayValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayValidator.swift; sourceTree = "<group>"; };
 		577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		577394FD2B3DC01000F002E6 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		577394FF2B3DC0B800F002E6 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		57C5C31E2B41BB2500FC2707 /* NameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidator.swift; sourceTree = "<group>"; };
 		57C5C3252B41D01900FC2707 /* ContentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImage.swift; sourceTree = "<group>"; };
 		57C5C3272B41DA6400FC2707 /* PetCard+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCard+Environment.swift"; sourceTree = "<group>"; };
+		57C5C3292B41EEDF00FC2707 /* BirthdayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayTextField.swift; sourceTree = "<group>"; };
 		57E61F172B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnFirstAppear+ViewModifier.swift"; sourceTree = "<group>"; };
 		57E61F1A2B3F18AE0099555A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		57E61F1E2B3F29420099555A /* AsyncCachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncCachedImage.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				577395022B3DC21800F002E6 /* CudiRelationshipPickerView.swift */,
 				577395082B3DD4DA00F002E6 /* PasswordTextField.swift */,
 				5773950A2B3DD51300F002E6 /* NameTextField.swift */,
+				57C5C3292B41EEDF00FC2707 /* BirthdayTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				577395062B3DD10200F002E6 /* PasswordValidator.swift */,
 				5773950C2B3DDAAD00F002E6 /* ValidationError.swift */,
 				57C5C31E2B41BB2500FC2707 /* NameValidator.swift */,
+				5769DC072B41F8D6001B98F5 /* BirthdayValidator.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -722,6 +728,7 @@
 				579D5B022B3C7EEC00BEB762 /* NetworkService.swift in Sources */,
 				57C5C31D2B41B8F300FC2707 /* PetForm.swift in Sources */,
 				574663A42B3CAE8600EFF1F9 /* BaseTextField+Environment.swift in Sources */,
+				5769DC082B41F8D6001B98F5 /* BirthdayValidator.swift in Sources */,
 				57E61F2D2B3F38E70099555A /* CircleImageView.swift in Sources */,
 				577395032B3DC21800F002E6 /* CudiRelationshipPickerView.swift in Sources */,
 				577395072B3DD10200F002E6 /* PasswordValidator.swift in Sources */,
@@ -780,6 +787,7 @@
 				57E61F2B2B3F36AD0099555A /* ProfileListItem.swift in Sources */,
 				57C5C31A2B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift in Sources */,
 				5751F8412B40A10400F26C45 /* CircleCardSize.swift in Sources */,
+				57C5C32A2B41EEDF00FC2707 /* BirthdayTextField.swift in Sources */,
 				57E61F1B2B3F18AE0099555A /* ProfileView.swift in Sources */,
 				572BE50B2B4064EF0039F1E6 /* EnvironmentStore.swift in Sources */,
 				579D5B002B3C7EC400BEB762 /* NetworkClient.swift in Sources */,

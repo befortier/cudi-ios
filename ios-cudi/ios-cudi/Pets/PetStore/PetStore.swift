@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 @MainActor @Observable
 class PetStore {
-    
+
     private var petRefreshTask: Task<[PetDTO], any Error>?
     private let petServiceAPIClient = PetServiceAPIClient()
     private let modelContext: ModelContext

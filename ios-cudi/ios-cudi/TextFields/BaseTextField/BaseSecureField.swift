@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUI
 
-public struct BaseSecureField: View {
+public struct BaseSecureField<ResultType>: View {
+    public typealias TextState = TextFieldState<ResultType>
     private let title: any StringProtocol
 
     /// If true masks the text to secure field
     @State private var maskText: Bool = true
-    @Bindable private var textFieldState: TextFieldState
+    @Bindable private var textFieldState: TextState
 
     private var imagePath: String {
         maskText ? "eye.fill" : "eye.slash.fill"
@@ -21,7 +22,7 @@ public struct BaseSecureField: View {
 
     public init<Title: StringProtocol>(
         _ title: Title,
-        textFieldState: Bindable<TextFieldState>
+        textFieldState: Bindable<TextState>
     ) {
         self.title = title
         self._textFieldState = textFieldState

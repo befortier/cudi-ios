@@ -9,28 +9,30 @@ import Foundation
 import SwiftUI
 
 @MainActor @Observable
-public final class TextFieldState {
+public final class TextFieldState<ResultType> {
 
-    private let validator: any TextFieldValidator
+    private let validator: any TextFieldValidator<ResultType>
     var text: String
     var error: ValidationError?
 
     var isValid: Bool { error == nil }
 
     public init(
-        validator: any TextFieldValidator,
+        validator: any TextFieldValidator<ResultType>,
         text: String = ""
     ) {
         self.validator = validator
         self.text = text
     }
 
-    func validate() {
+    func validate() -> ResultType? {
         do {
-            try validator.validate(text: text)
+            let result = try validator.validate(text: text)
             self.error = nil
+            return result
         } catch {
             self.error = error as? ValidationError ?? .general
+            return nil
         }
     }
 }

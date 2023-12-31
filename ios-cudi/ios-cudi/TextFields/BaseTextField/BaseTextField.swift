@@ -9,11 +9,13 @@ import Foundation
 import Combine
 import SwiftUI
 
-@MainActor public struct BaseTextField<AccessoryItem: View>: View {
+@MainActor public struct BaseTextField<AccessoryItem: View, ResultType>: View {
+    public typealias TextState = TextFieldState<ResultType>
+
     private let height: CGFloat = 48
 
     private let title: any StringProtocol
-    @Bindable private var textFieldState: TextFieldState
+    @Bindable private var textFieldState: TextState
 
     private let accessoryItem: () -> AccessoryItem
     private let onEditingChanged: (Bool) -> Void
@@ -24,7 +26,7 @@ import SwiftUI
 
     public init<Title: StringProtocol>(
         _ title: Title,
-        textFieldState: Bindable<TextFieldState>,
+        textFieldState: Bindable<TextState>,
         errorColor: Color = .red,
         @ViewBuilder accessoryItem: @escaping () -> AccessoryItem = { EmptyView() },
         onEditingChanged: @escaping (Bool) -> Void = { _ in }

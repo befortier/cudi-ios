@@ -8,7 +8,9 @@
 import Foundation
 
 struct NameValidator: TextFieldValidator {
-    func validate(text: String) throws {
+    typealias Name = String
+    func validate(text: String) throws -> Name {
         guard !text.isEmpty else { throw ValidationError.emptyName }
+        return text
     }
 }

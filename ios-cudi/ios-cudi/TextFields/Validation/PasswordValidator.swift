@@ -8,7 +8,8 @@
 import Foundation
 
 struct PasswordValidator: TextFieldValidator {
-    func validate(text: String) throws {
+    typealias Password = String
+    func validate(text: String) throws -> Password {
         // Minimum length:
         if text.count < 8 {
             throw ValidationError.passwordLengthTooShort
@@ -29,6 +30,6 @@ struct PasswordValidator: TextFieldValidator {
         guard isValid else {
             throw ValidationError.requiresOneCapitalAndOneSpecialChar
         }
-
+        return text
     }
 }

@@ -14,18 +14,16 @@ class PetForm: Identifiable {
     var image: UIImage? = nil
     var nameState = TextFieldState(validator: NameValidator())
     var selectedPetType: PetType = .dog
-    var birthday: Date?
-    
-    func validate() -> Bool {
-        [nameState]
-            .allSatisfy {
-                $0.validate()
-                return $0.isValid
-            }
-    }
+    var birthdayState = TextFieldState(validator: BirthdayValidator())
 
     func attemptSubmission() -> AddPetDTO? {
-        guard self.validate() else { return nil }
-        return AddPetDTO(name: nameState.text, type: selectedPetType, birthdate: birthday ?? .now, avatar: image?.pngData())
+        guard
+            let name = nameState.validate(),
+            let birthday = birthdayState.validate()
+        else {
+            return nil
+        }
+
+        return AddPetDTO(name: name, type: selectedPetType, birthdate: birthday, avatar: image?.pngData())
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
-public protocol TextFieldValidator: Sendable {
-    func validate(text: String) throws
+public protocol TextFieldValidator<ResultType>: Sendable {
+    associatedtype ResultType: Sendable
+    func validate(text: String) throws -> ResultType
 }

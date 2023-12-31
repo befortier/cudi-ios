@@ -26,6 +26,8 @@ struct CreatePetView: View {
                 .padding(.bottom, 16)
 
                 NameTextField(textFieldState: form.nameState, domainType: .pet(form.selectedPetType))
+                BirthdayTextField(textFieldState: form.birthdayState)
+
                 Spacer()
                 submitButton
                     .padding(.bottom, 32)

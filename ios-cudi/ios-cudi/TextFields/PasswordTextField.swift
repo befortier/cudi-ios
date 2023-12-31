@@ -10,7 +10,7 @@ import SwiftUI
 
 @MainActor
 struct PasswordTextField: View {
-    @Bindable var textFieldState: TextFieldState
+    @Bindable var textFieldState: TextFieldState<String>
 
     var body: some View {
         BaseSecureField("Password", textFieldState: $textFieldState)
