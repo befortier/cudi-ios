@@ -45,7 +45,7 @@ struct PetTypeSelectionOption: View {
         VStack {
             Text(item.rawValue.capitalized)
                 .font(.footnote)
-                .fontWeight(isSelected ? .heavy : .medium)
+                .fontWeight(.medium)
                 .foregroundColor(isSelected ? .black : .gray)
                 .background(Color.clear)
                 .multilineTextAlignment(.center)

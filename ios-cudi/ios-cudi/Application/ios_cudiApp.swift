@@ -13,12 +13,6 @@ struct ios_cudiApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
-                .onFirstAppear {
-                    print("Documents Directory: ", sharedModelContainer.configurations.first)
-
-                #if TARGET_IPHONE_SIMULATOR
-                 #endif
-                }
         }
         .modelContainer(sharedModelContainer)
     }

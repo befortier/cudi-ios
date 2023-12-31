@@ -15,18 +15,25 @@ struct PetCard: View {
     var title: String {
         pet?.name ?? "Add Pet"
     }
+    private let imageContentType: ImageContentType
 
     init(pet: Pet) {
         self.pet = pet
+        if let avatarURL = pet.avatarURL {
+            self.imageContentType = .remote(avatarURL)
+        } else {
+            self.imageContentType = .systemName("pawprint")
+        }
     }
 
     init() {
         self.pet = nil
+        self.imageContentType = .systemName("plus")
     }
 
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
-            avatarIconView
+            CircleImageView(contentType: imageContentType)
                 .setCircleCardSize(.medium)
                 .background(Color.white)
                 .clipShape(Circle())
@@ -36,20 +43,6 @@ struct PetCard: View {
                 .font(.headline)
         }
         .foregroundStyle(AppColor.textPrimary)
-    }
-
-    @ViewBuilder
-    private var avatarIconView: some View {
-        if let pet {
-            if let avatarURL = pet.avatarURL {
-                CircleImageView(imageURL: avatarURL)
-            } else {
-                CircleImageView(systemName: "pawprint")
-            }
-        } else {
-            CircleImageView(systemName: "plus")
-        }
-
     }
 }
 

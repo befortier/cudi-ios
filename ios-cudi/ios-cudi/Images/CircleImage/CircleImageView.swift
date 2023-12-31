@@ -13,38 +13,27 @@ struct CircleImageView: View {
     @Environment(\.circleCardSize) var circleCardSize
     @Environment(\.circleImageContentMode) var contentMode: ContentMode?
 
-    private let contentType: ImageContentType
-
-    init(imageURL: URL) {
-        self.contentType = .remote(imageURL)
-    }
-
-    init(systemName: String) {
-        self.contentType = .systemName(systemName)
-    }
-
-    init(contentType: ImageContentType) {
-        self.contentType = contentType
-    }
+    var contentType: ImageContentType
 
     var body: some View {
         contentView
+            .frame(width: circleCardSize.rawValue, height: circleCardSize.rawValue)
             .clipShape(Circle())
             .overlay {
                 Circle()
                     .stroke(.gray.opacity(0.15), lineWidth: 1)
             }
-            .frame(width: circleCardSize.rawValue, height: circleCardSize.rawValue)
 
     }
 
     @ViewBuilder
     private var contentView: some View {
         switch contentType {
-        case .defaultAvatar(let defaultAvatarType):
-            image(systemName: defaultAvatarType.rawValue)
         case .systemName(let systemName):
-            image(systemName: systemName)
+            Image(systemName: systemName)
+                .resizable()
+                .padding()
+                .aspectRatio(contentMode: contentMode ?? .fit)
         case .image(let uiImage):
             Image(uiImage: uiImage)
                 .resizable()
@@ -56,13 +45,6 @@ struct CircleImageView: View {
                     .modifier(ShimmerModifier())
             }
         }
-    }
-
-    private func image(systemName: String) -> some View {
-        Image(systemName: systemName)
-            .resizable()
-            .padding()
-            .aspectRatio(contentMode: contentMode ?? .fit)
     }
 }
 
@@ -83,13 +65,14 @@ struct CircleImageView: View {
         HStack {
 
             CircleImageView(contentType: .systemName("pawprint"))
-            CircleImageView(contentType: .defaultAvatar(.cat))
-            CircleImageView(contentType: .defaultAvatar(.dog))
 
             CircleImageView(contentType: .image(UIImage(systemName: "person")!))
                 .setCircleAspectRatio(contentMode: .fill)
+                .background(Color.blue)
 
-
+            CircleImageView(contentType: .image(UIImage(systemName: "person")!))
+                .setCircleAspectRatio(contentMode: .fit)
+                .background(Color.red)
         }
         .setCircleCardSize(.medium)
     }

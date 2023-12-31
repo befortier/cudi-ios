@@ -12,5 +12,18 @@ enum ImageContentType: Sendable, Equatable {
     case systemName(String)
     case remote(URL)
     case image(UIImage)
-    case defaultAvatar(DefaultAvatarType)
+
+    var hasBackedImage: Bool {
+        guard case .remote = self else {
+            return false
+        }
+        return true
+    }
+
+    var selectedImage: UIImage? {
+        guard case .image(let uIImage) = self else {
+            return nil
+        }
+        return uIImage
+    }
 }

@@ -29,13 +29,13 @@ struct CreatePetView: View {
             }
             .padding(.horizontal, 16)
         }
-        .background(AppColor.softBackground)
+        .background(AppColor.softBackground) // TODO: Back some background with bones/wiskers...
     }
 
     private var addImageSection: some View {
         EditableAvatarView(
             selectedImage: $selectedImage,
-            defaultImage: .systemName(selectedPetType.rawValue)
+            petType: selectedPetType
         )
         .frame(width: imageDiameter, height: imageDiameter)
         .foregroundStyle(.gray)

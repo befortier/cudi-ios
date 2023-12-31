@@ -17,7 +17,8 @@ struct ProfileHeaderView: View {
         VStack(spacing: 16) {
             HStack(spacing: 16) {
                 EditableAvatarView(
-                    selectedImage: $selectedImage,
+                    selectedImage: $selectedImage, 
+                    domain: .person,
                     url: user.avatarURL
                 )
                 .setCircleCardSize(.medium)

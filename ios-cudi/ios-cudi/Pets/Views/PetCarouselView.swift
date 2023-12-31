@@ -42,6 +42,7 @@ struct ScrollablePetList: View {
 }
 
 import SwiftData
+
 #Preview {
     let container = previewModelContainer
 
@@ -50,6 +51,6 @@ import SwiftData
         ScrollablePetList(pets: pets)
             .padding()
             .background(AppColor.softBackground)
-            .modelContainer(previewModelContainer)
+            .modelContainer(container)
     }
 }

@@ -26,7 +26,7 @@ struct SignupFormView: View {
         VStack(alignment: .center, spacing: 24) {
             EditableAvatarView(
                 selectedImage: $selectedImage,
-                defaultImage: .systemName("person")
+                domain: .person
             )
             .setCircleCardSize(.large)
 

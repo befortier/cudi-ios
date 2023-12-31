@@ -16,6 +16,7 @@ class ImageLoader {
     private let url: URL
     private var cache: ImageCache
     private var cancellable: AnyCancellable?
+    private var imageCacheChange: AnyCancellable?
 
     init(
         url: URL,
@@ -23,6 +24,13 @@ class ImageLoader {
     ) {
         self.url = url
         self.cache = cache
+
+        Task {
+            imageCacheChange = await cache.imageUpdatePublisher
+                .filter { $0.0 == url }
+                .map { $0.1 }
+                .assign(to: \.image, on: self)
+        }
     }
 
     func load() async {

@@ -65,6 +65,8 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
-        .setAppState(.stub())
+    let container = previewModelContainer
+    
+    return ProfileView()
+        .modelContainer(container)
 }
