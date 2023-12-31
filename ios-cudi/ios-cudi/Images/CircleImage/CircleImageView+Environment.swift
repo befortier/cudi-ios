@@ -36,14 +36,14 @@ private struct CircleImageContentModeEnvironmentKey: EnvironmentKey {
 }
 
 extension EnvironmentValues {
-    var circleImageContentMode: ContentMode? {
+    var imageContentMode: ContentMode? {
         get { self[CircleImageContentModeEnvironmentKey.self] }
         set { self[CircleImageContentModeEnvironmentKey.self] = newValue }
     }
 }
 
 extension View {
-    func setCircleAspectRatio(contentMode: ContentMode) -> some View {
-        environment(\.circleImageContentMode, contentMode)
+    func setImageContentMode(contentMode: ContentMode) -> some View {
+        environment(\.imageContentMode, contentMode)
     }
 }

@@ -22,6 +22,10 @@ struct ProfileHeaderView: View {
                     url: user.avatarURL
                 )
                 .setCircleCardSize(.medium)
+                .onChange(of: selectedImage) { oldValue, newValue in
+                    // Maybe just make the edit profile have the ability to edit :thinking
+                    // TODO: Upload image here and clean up image cache if fails
+                }
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(user.name)

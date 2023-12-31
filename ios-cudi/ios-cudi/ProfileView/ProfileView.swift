@@ -34,6 +34,7 @@ struct ProfileView: View {
     private var petsSection: some View {
         Section {
             ScrollablePetList(pets: petStore.pets)
+                .setPetCardSize(.small)
         } header: {
             Text("Pets")
                 .frame(maxWidth: .infinity, alignment: .leading)

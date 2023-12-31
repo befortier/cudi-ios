@@ -20,7 +20,7 @@ struct ScrollablePetList: View {
                 }
                 addPetCard
             }
-            .padding(.horizontal, 8)
+            .padding([.horizontal, .bottom], 8)
         }
     }
 

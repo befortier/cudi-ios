@@ -11,12 +11,11 @@ import SwiftUI
 @MainActor
 struct CircleImageView: View {
     @Environment(\.circleCardSize) var circleCardSize
-    @Environment(\.circleImageContentMode) var contentMode: ContentMode?
 
     var contentType: ImageContentType
 
     var body: some View {
-        contentView
+        ContentImage(contentType: contentType)
             .frame(width: circleCardSize.rawValue, height: circleCardSize.rawValue)
             .clipShape(Circle())
             .overlay {
@@ -24,27 +23,6 @@ struct CircleImageView: View {
                     .stroke(.gray.opacity(0.15), lineWidth: 1)
             }
 
-    }
-
-    @ViewBuilder
-    private var contentView: some View {
-        switch contentType {
-        case .systemName(let systemName):
-            Image(systemName: systemName)
-                .resizable()
-                .padding()
-                .aspectRatio(contentMode: contentMode ?? .fit)
-        case .image(let uiImage):
-            Image(uiImage: uiImage)
-                .resizable()
-                .aspectRatio(contentMode: contentMode ?? .fill)
-        case .remote(let imageURL):
-            AsyncCachedImage(url: imageURL) {
-                Circle()
-                    .fill(.gray)
-                    .modifier(ShimmerModifier())
-            }
-        }
     }
 }
 
@@ -67,11 +45,11 @@ struct CircleImageView: View {
             CircleImageView(contentType: .systemName("pawprint"))
 
             CircleImageView(contentType: .image(UIImage(systemName: "person")!))
-                .setCircleAspectRatio(contentMode: .fill)
+                .setImageContentMode(contentMode: .fill)
                 .background(Color.blue)
 
             CircleImageView(contentType: .image(UIImage(systemName: "person")!))
-                .setCircleAspectRatio(contentMode: .fit)
+                .setImageContentMode(contentMode: .fit)
                 .background(Color.red)
         }
         .setCircleCardSize(.medium)

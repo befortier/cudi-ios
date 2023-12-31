@@ -61,6 +61,8 @@
 		57C5C31A2B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C3192B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift */; };
 		57C5C31D2B41B8F300FC2707 /* PetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C31C2B41B8F300FC2707 /* PetForm.swift */; };
 		57C5C31F2B41BB2500FC2707 /* NameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C31E2B41BB2500FC2707 /* NameValidator.swift */; };
+		57C5C3262B41D01900FC2707 /* ContentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C3252B41D01900FC2707 /* ContentImage.swift */; };
+		57C5C3282B41DA6400FC2707 /* PetCard+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C3272B41DA6400FC2707 /* PetCard+Environment.swift */; };
 		57E61F182B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F172B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift */; };
 		57E61F1B2B3F18AE0099555A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F1A2B3F18AE0099555A /* ProfileView.swift */; };
 		57E61F1F2B3F29420099555A /* AsyncCachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F1E2B3F29420099555A /* AsyncCachedImage.swift */; };
@@ -160,6 +162,8 @@
 		57C5C3192B41B7DC00FC2707 /* MinimalistNavBar+ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MinimalistNavBar+ViewModifier.swift"; sourceTree = "<group>"; };
 		57C5C31C2B41B8F300FC2707 /* PetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetForm.swift; sourceTree = "<group>"; };
 		57C5C31E2B41BB2500FC2707 /* NameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidator.swift; sourceTree = "<group>"; };
+		57C5C3252B41D01900FC2707 /* ContentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImage.swift; sourceTree = "<group>"; };
+		57C5C3272B41DA6400FC2707 /* PetCard+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCard+Environment.swift"; sourceTree = "<group>"; };
 		57E61F172B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnFirstAppear+ViewModifier.swift"; sourceTree = "<group>"; };
 		57E61F1A2B3F18AE0099555A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		57E61F1E2B3F29420099555A /* AsyncCachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncCachedImage.swift; sourceTree = "<group>"; };
@@ -474,6 +478,15 @@
 			path = CreatePet;
 			sourceTree = "<group>";
 		};
+		57C5C3222B41CFC700FC2707 /* PetCard */ = {
+			isa = PBXGroup;
+			children = (
+				57FA76D02B3F707200CACAD0 /* PetCard.swift */,
+				57C5C3272B41DA6400FC2707 /* PetCard+Environment.swift */,
+			);
+			path = PetCard;
+			sourceTree = "<group>";
+		};
 		57E61F162B3DF6980099555A /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +513,7 @@
 				57E61F1E2B3F29420099555A /* AsyncCachedImage.swift */,
 				57E61F242B3F2C1B0099555A /* ImageLoader.swift */,
 				57E61F262B3F2D9F0099555A /* ImageCache.swift */,
+				57C5C3252B41D01900FC2707 /* ContentImage.swift */,
 			);
 			path = AsyncCachedImage;
 			sourceTree = "<group>";
@@ -539,10 +553,10 @@
 		57E61F3F2B3F3F4B0099555A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				57C5C3222B41CFC700FC2707 /* PetCard */,
 				57C5C31B2B41B87B00FC2707 /* CreatePet */,
 				5751F8442B40A5DE00F26C45 /* PetSelection */,
 				57E61F412B3F3FA40099555A /* PetCarouselView.swift */,
-				57FA76D02B3F707200CACAD0 /* PetCard.swift */,
 				57FA76D22B3F717800CACAD0 /* PetDetailView.swift */,
 			);
 			path = Views;
@@ -697,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				577394FC2B3DC00500F002E6 /* TextFieldValidator.swift in Sources */,
+				57C5C3262B41D01900FC2707 /* ContentImage.swift in Sources */,
 				5751F8432B40A5D900F26C45 /* PetTypeSelectionView.swift in Sources */,
 				579D5B182B3C8DF500BEB762 /* SignupView.swift in Sources */,
 				577395092B3DD4DA00F002E6 /* PasswordTextField.swift in Sources */,
@@ -718,6 +733,7 @@
 				572BE5102B406A790039F1E6 /* PostEndpoint.swift in Sources */,
 				5751F84A2B40E29C00F26C45 /* CircleImageView+Environment.swift in Sources */,
 				572BE5082B4064D70039F1E6 /* Environment.swift in Sources */,
+				57C5C3282B41DA6400FC2707 /* PetCard+Environment.swift in Sources */,
 				57E61F3E2B3F3E980099555A /* User+Environment.swift in Sources */,
 				577395052B3DC29400F002E6 /* SignupView+ViewModel.swift in Sources */,
 				579D5B042B3C7F1B00BEB762 /* NetworkError.swift in Sources */,
