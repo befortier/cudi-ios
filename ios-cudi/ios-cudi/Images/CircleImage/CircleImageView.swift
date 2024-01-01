@@ -11,12 +11,52 @@ import SwiftUI
 @MainActor
 struct CircleImageView: View {
     @Environment(\.circleCardSize) var circleCardSize
+    @Environment(\.imageContentMode) var imageContentMode
+
+    var imageFrameSize: CGFloat {
+        let interiorSquareDimension = circleCardSize.rawValue/2 * sqrt(2)
+        // if we have fit OR default is fit use square
+        if case .systemName = contentType {
+            return interiorSquareDimension
+        }
+
+        if imageContentMode == .fit {
+            return interiorSquareDimension
+
+        }
+
+        return circleCardSize.rawValue
+    }
+
+//    var frameDimension: CGFloat {
+//        if imageContentMode == .fill {
+//            // no padding
+//            return circleCardSize.rawValue
+//        }
+//        switch contentType {
+//        case .systemName(let string):
+//            <#code#>
+//        case .remote(let uRL):
+//            <#code#>
+//        case .image(let uIImage):
+//            circleCardSize.rawValue
+//        }
+//        // if its a fit, we want no padding internally so we want image frame
+//        // to be the interior square
+//    }
 
     var contentType: ImageContentType
 
     var body: some View {
         ContentImage(contentType: contentType)
-            .frame(width: circleCardSize.rawValue, height: circleCardSize.rawValue)
+            .frame(
+                width: imageFrameSize,
+                height: imageFrameSize
+            )
+            .frame(
+                width: circleCardSize.rawValue,
+                height: circleCardSize.rawValue
+            )
             .clipShape(Circle())
             .overlay {
                 Circle()
@@ -32,16 +72,17 @@ struct CircleImageView: View {
             CircleImageView(contentType: .systemName("pawprint"))
                 .setCircleCardSize(.large)
 
-            CircleImageView(contentType: .systemName("pawprint"))
+            CircleImageView(contentType: .systemName("dog"))
                 .setCircleCardSize(.medium)
 
-            CircleImageView(contentType: .systemName("pawprint"))
+            CircleImageView(contentType: .systemName("dog"))
                 .setCircleCardSize(.small)
         }
 
         HStack {
 
             CircleImageView(contentType: .systemName("pawprint"))
+                .background(Color.yellow)
 
             CircleImageView(contentType: .image(UIImage(systemName: "person")!))
                 .setImageContentMode(contentMode: .fill)

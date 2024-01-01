@@ -24,7 +24,6 @@ struct ContentImage: View {
         case .systemName(let systemName):
             Image(systemName: systemName)
                 .resizable()
-                .padding()
                 .aspectRatio(contentMode: contentMode ?? .fit)
         case .image(let uiImage):
             Image(uiImage: uiImage)
