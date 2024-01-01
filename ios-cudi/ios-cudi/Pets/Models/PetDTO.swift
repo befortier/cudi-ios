@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct PetDTO: Decodable, Identifiable {
+protocol DecodedDTO: Decodable, Sendable, Identifiable {}
+
+struct PetDTO: DecodedDTO {
     let id: String
     let name: String
     let type: PetType

@@ -42,7 +42,9 @@ final class Pet: Identifiable, Equatable {
     }
 }
 
-enum PetType: String, RawRepresentable, Codable, Equatable, CaseIterable, Identifiable {
+protocol EnumeratedModel: RawRepresentable, Codable, Equatable, CaseIterable, Identifiable {}
+
+enum PetType: String, EnumeratedModel {
     case dog
     case cat
 

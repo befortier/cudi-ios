@@ -18,15 +18,17 @@ struct ios_cudiApp: App {
     }
 }
 
+private let modelSchema = Schema([
+    Pet.self,
+    User.self,
+    ActivityFeedItem.self
+])
+
 var sharedModelContainer: ModelContainer = {
-    let schema = Schema([
-        Pet.self,
-        User.self
-    ])
-    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+    let modelConfiguration = ModelConfiguration(schema: modelSchema, isStoredInMemoryOnly: false)
 
     do {
-        return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        return try ModelContainer(for: modelSchema, configurations: [modelConfiguration])
     } catch {
         fatalError("Could not create ModelContainer: \(error)")
     }
@@ -37,13 +39,8 @@ var sharedModelContainer: ModelContainer = {
 class DataController {
     static var previewContainer: ModelContainer = {
         do {
-            let schema = Schema([
-                Pet.self,
-                User.self
-            ])
-            let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
-            let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
-//            container.mainContext.insert(User.stub)
+            let modelConfiguration = ModelConfiguration(schema: modelSchema, isStoredInMemoryOnly: true)
+            let container = try ModelContainer(for: modelSchema, configurations: [modelConfiguration])
             return container
         } catch {
             fatalError("Failed to create model container for previewing: \(error.localizedDescription)")

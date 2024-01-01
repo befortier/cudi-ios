@@ -12,14 +12,17 @@ import SwiftData
 extension PetStore {
     static func stub(modelContext: ModelContext) -> PetStore {
         let petDTOs = [
-            PetDTO.cudi,
+            .cudi,
+            .brisco,
             PetDTO(id: "ranom", name: "Brisco", type: .dog, birthdate: .now, avatarURL: nil),
             PetDTO(id: "ranom2", name: "Catto", type: .cat, birthdate: .now, avatarURL: nil),
         ]
+        let pets = petDTOs.map { Pet(petDTO: $0) }
+        pets.forEach { modelContext.insert($0) }
         return PetStore(
             modelContext: modelContext,
             user: .stub,
-            pets: petDTOs.map { Pet(petDTO: $0) }
+            pets: []
         )
     }
 }

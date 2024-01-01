@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 import SwiftUI
+
 @MainActor @Observable
 class PetStore {
 
@@ -29,32 +30,23 @@ class PetStore {
         self.pets = pets ?? cachedPets ?? []
     }
 
-    func loadPets() async throws {
-        guard petRefreshTask == nil else { return }
-        let petRefreshTask = Task { try await petServiceAPIClient.getPets() }
-        self.petRefreshTask = petRefreshTask
-        let petDTOs = try await petRefreshTask.value
-        let pets = petDTOs.map { Pet(petDTO: $0) }
-
+    func setPets(_ pets: [Pet]) {
         // remove any pets that are not in source of truth
         let noLongerExistingPets = Set(self.pets).subtracting(Set(pets))
         noLongerExistingPets.forEach { modelContext.delete($0) }
 
         pets.forEach { modelContext.insert($0) }
         self.pets = pets
-
-        self.petRefreshTask = nil
     }
 
-    func addPet(pet: AddPetDTO) async throws {
-        let petDTO = try await petServiceAPIClient.addPet(addPetDTO: pet)
+    func addPet(petDTO: PetDTO) async throws {
         let pet = Pet(petDTO: petDTO)
         pets.append(pet)
         modelContext.insert(pet)
     }
 
-    func removePets() {
-        self.pets.forEach { 
+    func removeAllPets() {
+        self.pets.forEach {
             modelContext.delete($0)
         }
         self.pets = []
@@ -63,5 +55,9 @@ class PetStore {
     func removePet(pet: Pet) {
         modelContext.delete(pet)
         self.pets = self.pets.filter { $0 != pet }
+    }
+
+    func removePets(pets: [Pet]) {
+        pets.forEach { removePet(pet: $0) }
     }
 }

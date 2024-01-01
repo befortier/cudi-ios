@@ -49,7 +49,7 @@ struct MainTabView: View {
 
             }
             .onFirstAppear {
-                Task { try? await petStore.loadPets() }
+                Task { try? await PetRepository(petStore: petStore).loadPets() }
             }
             .accentColor(AppColor.textPrimary) // Customize accent color (optional)
         }
@@ -66,11 +66,11 @@ struct ActivityFeedListView: View {
     var body: some View {
         NavigationStack {
             Button("Clear pets") {
-                petStore.removePets()
+                petStore.removeAllPets()
             }
 
             Button("Add pets") {
-                Task { try? await petStore.loadPets() }
+                Task { try? await PetRepository(petStore: petStore).loadPets() }
             }
 
             Button("Add cudi to \(petStore.pets.count) \(pets.count)") {
@@ -78,7 +78,7 @@ struct ActivityFeedListView: View {
             }
 
             Button("Logout") {
-                petStore.removePets()
+                petStore.removeAllPets()
                 modelContext.delete(user)
             }
                 .navigationTitle("Activity Feed")

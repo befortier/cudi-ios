@@ -60,7 +60,7 @@ struct CreatePetView: View {
 
             Task {
                 // TODO: Clean up image cache if fails.
-                try await petStore.addPet(pet: addPetDTO)
+                try await PetRepository(petStore: petStore).addPet(pet: addPetDTO)
                 dismiss()
             }
         } label: {

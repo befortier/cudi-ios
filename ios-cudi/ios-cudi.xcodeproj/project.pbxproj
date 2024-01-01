@@ -28,6 +28,13 @@
 		5769DC082B41F8D6001B98F5 /* BirthdayValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC072B41F8D6001B98F5 /* BirthdayValidator.swift */; };
 		5769DC0A2B420552001B98F5 /* InterpretedEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC092B420552001B98F5 /* InterpretedEndpoint.swift */; };
 		5769DC0C2B420575001B98F5 /* EndpointInterpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC0B2B420575001B98F5 /* EndpointInterpreter.swift */; };
+		5769DC112B423290001B98F5 /* ActivityFeedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC102B423290001B98F5 /* ActivityFeedCard.swift */; };
+		5769DC132B42329A001B98F5 /* ActivityFeedItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC122B42329A001B98F5 /* ActivityFeedItemDTO.swift */; };
+		5769DC152B42352E001B98F5 /* ActivityFeedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC142B42352E001B98F5 /* ActivityFeedItemType.swift */; };
+		5769DC182B42456C001B98F5 /* ActivityFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC172B42456C001B98F5 /* ActivityFeedStore.swift */; };
+		5769DC1A2B4245F1001B98F5 /* ActivityFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC192B4245F1001B98F5 /* ActivityFeedItem.swift */; };
+		5769DC1C2B424B29001B98F5 /* ActivityFeedServiceAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC1B2B424B29001B98F5 /* ActivityFeedServiceAPIClient.swift */; };
+		5771938D2B4321240078617C /* PetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5771938C2B4321240078617C /* PetRepository.swift */; };
 		577394FC2B3DC00500F002E6 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */; };
 		577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FD2B3DC01000F002E6 /* EmailValidator.swift */; };
 		577395002B3DC0B800F002E6 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FF2B3DC0B800F002E6 /* TextFieldState.swift */; };
@@ -86,7 +93,10 @@
 		57E61F422B3F3FA40099555A /* PetCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F412B3F3FA40099555A /* PetCarouselView.swift */; };
 		57E61F452B3F451E0099555A /* PetStore+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F442B3F451E0099555A /* PetStore+Environment.swift */; };
 		57E61F472B3F45330099555A /* PetStore+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E61F462B3F45330099555A /* PetStore+Stub.swift */; };
-		57FA76D12B3F707200CACAD0 /* PetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA76D02B3F707200CACAD0 /* PetCard.swift */; };
+		57E9A1702B42FD0600E28646 /* ActivityFeedCard+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9A16F2B42FD0600E28646 /* ActivityFeedCard+Environment.swift */; };
+		57E9A1732B430F0B00E28646 /* PetTypeSelectionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9A1722B430F0B00E28646 /* PetTypeSelectionOption.swift */; };
+		57E9A1752B430F9800E28646 /* RoundedPetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9A1742B430F9800E28646 /* RoundedPetCard.swift */; };
+		57E9A1772B430FA200E28646 /* CircularPetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9A1762B430FA200E28646 /* CircularPetCard.swift */; };
 		57FA76D32B3F717800CACAD0 /* PetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA76D22B3F717800CACAD0 /* PetDetailView.swift */; };
 		57FA76D62B3F728000CACAD0 /* PetServiceAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA76D52B3F728000CACAD0 /* PetServiceAPIClient.swift */; };
 /* End PBXBuildFile section */
@@ -130,6 +140,13 @@
 		5769DC072B41F8D6001B98F5 /* BirthdayValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayValidator.swift; sourceTree = "<group>"; };
 		5769DC092B420552001B98F5 /* InterpretedEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretedEndpoint.swift; sourceTree = "<group>"; };
 		5769DC0B2B420575001B98F5 /* EndpointInterpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointInterpreter.swift; sourceTree = "<group>"; };
+		5769DC102B423290001B98F5 /* ActivityFeedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedCard.swift; sourceTree = "<group>"; };
+		5769DC122B42329A001B98F5 /* ActivityFeedItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedItemDTO.swift; sourceTree = "<group>"; };
+		5769DC142B42352E001B98F5 /* ActivityFeedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedItemType.swift; sourceTree = "<group>"; };
+		5769DC172B42456C001B98F5 /* ActivityFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedStore.swift; sourceTree = "<group>"; };
+		5769DC192B4245F1001B98F5 /* ActivityFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedItem.swift; sourceTree = "<group>"; };
+		5769DC1B2B424B29001B98F5 /* ActivityFeedServiceAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedServiceAPIClient.swift; sourceTree = "<group>"; };
+		5771938C2B4321240078617C /* PetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRepository.swift; sourceTree = "<group>"; };
 		577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		577394FD2B3DC01000F002E6 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		577394FF2B3DC0B800F002E6 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
@@ -191,7 +208,10 @@
 		57E61F412B3F3FA40099555A /* PetCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCarouselView.swift; sourceTree = "<group>"; };
 		57E61F442B3F451E0099555A /* PetStore+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetStore+Environment.swift"; sourceTree = "<group>"; };
 		57E61F462B3F45330099555A /* PetStore+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetStore+Stub.swift"; sourceTree = "<group>"; };
-		57FA76D02B3F707200CACAD0 /* PetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCard.swift; sourceTree = "<group>"; };
+		57E9A16F2B42FD0600E28646 /* ActivityFeedCard+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityFeedCard+Environment.swift"; sourceTree = "<group>"; };
+		57E9A1722B430F0B00E28646 /* PetTypeSelectionOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTypeSelectionOption.swift; sourceTree = "<group>"; };
+		57E9A1742B430F9800E28646 /* RoundedPetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedPetCard.swift; sourceTree = "<group>"; };
+		57E9A1762B430FA200E28646 /* CircularPetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularPetCard.swift; sourceTree = "<group>"; };
 		57FA76D22B3F717800CACAD0 /* PetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailView.swift; sourceTree = "<group>"; };
 		57FA76D52B3F728000CACAD0 /* PetServiceAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetServiceAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				5751F8422B40A5D900F26C45 /* PetTypeSelectionView.swift */,
+				57E9A1722B430F0B00E28646 /* PetTypeSelectionOption.swift */,
 			);
 			path = PetSelection;
 			sourceTree = "<group>";
@@ -318,6 +339,9 @@
 		5769DC0D2B420674001B98F5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5769DC122B42329A001B98F5 /* ActivityFeedItemDTO.swift */,
+				5769DC142B42352E001B98F5 /* ActivityFeedItemType.swift */,
+				5769DC192B4245F1001B98F5 /* ActivityFeedItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,6 +349,7 @@
 		5769DC0E2B420678001B98F5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5769DC1B2B424B29001B98F5 /* ActivityFeedServiceAPIClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -332,8 +357,25 @@
 		5769DC0F2B42067D001B98F5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				57E9A16E2B42FCF900E28646 /* ActivityFeedCard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5769DC162B42455D001B98F5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5769DC172B42456C001B98F5 /* ActivityFeedStore.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5771938E2B43224D0078617C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				57E61F342B3F3AC90099555A /* UserStore.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		577394FA2B3DBFF800F002E6 /* Validation */ = {
@@ -352,6 +394,8 @@
 		57769F4B2B3FAC02008C894B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				57E61F3D2B3F3E980099555A /* User+Environment.swift */,
+				579D5B092B3C7FB400BEB762 /* User.swift */,
 				579D5B072B3C7FB000BEB762 /* UserDTO.swift */,
 				57769F4C2B3FAC0A008C894B /* CreateUserDTO.swift */,
 			);
@@ -439,10 +483,8 @@
 		579D5AFD2B3C7E6C00BEB762 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				5771938E2B43224D0078617C /* Data */,
 				57769F4B2B3FAC02008C894B /* Models */,
-				57E61F3D2B3F3E980099555A /* User+Environment.swift */,
-				579D5B092B3C7FB400BEB762 /* User.swift */,
-				57E61F342B3F3AC90099555A /* UserStore.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -450,6 +492,7 @@
 		579D5AFE2B3C7E6F00BEB762 /* ActivityFeed */ = {
 			isa = PBXGroup;
 			children = (
+				5769DC162B42455D001B98F5 /* Data */,
 				5769DC0F2B42067D001B98F5 /* Views */,
 				5769DC0E2B420678001B98F5 /* Network */,
 				5769DC0D2B420674001B98F5 /* Models */,
@@ -517,8 +560,9 @@
 		57C5C3222B41CFC700FC2707 /* PetCard */ = {
 			isa = PBXGroup;
 			children = (
-				57FA76D02B3F707200CACAD0 /* PetCard.swift */,
 				57C5C3272B41DA6400FC2707 /* PetCard+Environment.swift */,
+				57E9A1742B430F9800E28646 /* RoundedPetCard.swift */,
+				57E9A1762B430FA200E28646 /* CircularPetCard.swift */,
 			);
 			path = PetCard;
 			sourceTree = "<group>";
@@ -558,7 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				57FA76D42B3F727500CACAD0 /* Network */,
-				57E61F432B3F45140099555A /* PetStore */,
+				57E61F432B3F45140099555A /* Data */,
 				57E61F3F2B3F3F4B0099555A /* Views */,
 				57E61F2F2B3F39E80099555A /* Models */,
 			);
@@ -598,14 +642,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		57E61F432B3F45140099555A /* PetStore */ = {
+		57E61F432B3F45140099555A /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				57E61F322B3F3A900099555A /* PetStore.swift */,
 				57E61F442B3F451E0099555A /* PetStore+Environment.swift */,
 				57E61F462B3F45330099555A /* PetStore+Stub.swift */,
+				5771938C2B4321240078617C /* PetRepository.swift */,
 			);
-			path = PetStore;
+			path = Data;
+			sourceTree = "<group>";
+		};
+		57E9A16E2B42FCF900E28646 /* ActivityFeedCard */ = {
+			isa = PBXGroup;
+			children = (
+				5769DC102B423290001B98F5 /* ActivityFeedCard.swift */,
+				57E9A16F2B42FD0600E28646 /* ActivityFeedCard+Environment.swift */,
+			);
+			path = ActivityFeedCard;
 			sourceTree = "<group>";
 		};
 		57FA76D42B3F727500CACAD0 /* Network */ = {
@@ -766,11 +820,17 @@
 				57769F4D2B3FAC0A008C894B /* CreateUserDTO.swift in Sources */,
 				579D5B1A2B3C914400BEB762 /* Colors.swift in Sources */,
 				5773950D2B3DDAAD00F002E6 /* ValidationError.swift in Sources */,
+				57E9A1702B42FD0600E28646 /* ActivityFeedCard+Environment.swift in Sources */,
+				5769DC182B42456C001B98F5 /* ActivityFeedStore.swift in Sources */,
 				57E61F472B3F45330099555A /* PetStore+Stub.swift in Sources */,
+				57E9A1752B430F9800E28646 /* RoundedPetCard.swift in Sources */,
+				5771938D2B4321240078617C /* PetRepository.swift in Sources */,
 				572BE5102B406A790039F1E6 /* PostEndpoint.swift in Sources */,
 				5751F84A2B40E29C00F26C45 /* CircleImageView+Environment.swift in Sources */,
+				5769DC152B42352E001B98F5 /* ActivityFeedItemType.swift in Sources */,
 				572BE5082B4064D70039F1E6 /* Environment.swift in Sources */,
 				57C5C3282B41DA6400FC2707 /* PetCard+Environment.swift in Sources */,
+				57E9A1772B430FA200E28646 /* CircularPetCard.swift in Sources */,
 				57E61F3E2B3F3E980099555A /* User+Environment.swift in Sources */,
 				577395052B3DC29400F002E6 /* SignupView+ViewModel.swift in Sources */,
 				579D5B042B3C7F1B00BEB762 /* NetworkError.swift in Sources */,
@@ -781,11 +841,13 @@
 				57E61F392B3F3DA20099555A /* AppState+ViewModifier.swift in Sources */,
 				579D5B0D2B3C80FC00BEB762 /* RootView.swift in Sources */,
 				579D5B0A2B3C7FB400BEB762 /* User.swift in Sources */,
+				5769DC1C2B424B29001B98F5 /* ActivityFeedServiceAPIClient.swift in Sources */,
 				57E61F372B3F3C720099555A /* PetDTO.swift in Sources */,
 				574663A82B3CAF1700EFF1F9 /* EmailTextField.swift in Sources */,
 				574663AA2B3CB3E900EFF1F9 /* BaseSecureField.swift in Sources */,
 				57E61F352B3F3AC90099555A /* UserStore.swift in Sources */,
-				57FA76D12B3F707200CACAD0 /* PetCard.swift in Sources */,
+				5769DC1A2B4245F1001B98F5 /* ActivityFeedItem.swift in Sources */,
+				57E9A1732B430F0B00E28646 /* PetTypeSelectionOption.swift in Sources */,
 				57E61F332B3F3A900099555A /* PetStore.swift in Sources */,
 				574663A22B3CAE6900EFF1F9 /* BaseTextField.swift in Sources */,
 				57E61F312B3F39F00099555A /* Pet.swift in Sources */,
@@ -794,6 +856,7 @@
 				57FA76D32B3F717800CACAD0 /* PetDetailView.swift in Sources */,
 				577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */,
 				57E61F452B3F451E0099555A /* PetStore+Environment.swift in Sources */,
+				5769DC132B42329A001B98F5 /* ActivityFeedItemDTO.swift in Sources */,
 				572BE5122B406A980039F1E6 /* GetEndpoint.swift in Sources */,
 				5769DC0C2B420575001B98F5 /* EndpointInterpreter.swift in Sources */,
 				57E61F422B3F3FA40099555A /* PetCarouselView.swift in Sources */,
@@ -808,6 +871,7 @@
 				572BE5152B40705A0039F1E6 /* ImagePickerView.swift in Sources */,
 				57E61F292B3F33460099555A /* Shimmer+ViewModifier.swift in Sources */,
 				57C5C31F2B41BB2500FC2707 /* NameValidator.swift in Sources */,
+				5769DC112B423290001B98F5 /* ActivityFeedCard.swift in Sources */,
 				57E61F182B3DF6A00099555A /* OnFirstAppear+ViewModifier.swift in Sources */,
 				5773950B2B3DD51300F002E6 /* NameTextField.swift in Sources */,
 				5751F8462B40E0D600F26C45 /* ImageContentType.swift in Sources */,

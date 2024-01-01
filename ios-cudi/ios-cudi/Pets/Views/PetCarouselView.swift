@@ -28,7 +28,7 @@ struct ScrollablePetList: View {
         NavigationLink {
             PetDetailView(pet: pet)
         } label: {
-            PetCard(pet: pet)
+            RoundedPetCard(pet: pet)
         }
     }
 
@@ -36,7 +36,7 @@ struct ScrollablePetList: View {
         NavigationLink {
             CreatePetView(form: .init())
         } label: {
-            PetCard()
+            RoundedPetCard()
         }
     }
 }

@@ -8,12 +8,36 @@
 import Foundation
 import SwiftUI
 
-// MARK: CircleCardSize
+// MARK: PetCardSize
 
 enum PetCardSize: CGFloat, Sendable {
     case small = 120
     case medium = 150
     case large = 180
+
+    var circleCardSize: CircleCardSize {
+        switch self {
+        case .small: .small
+        case .medium: .medium
+        case .large: .large
+        }
+    }
+
+    var font: Font {
+        switch self {
+        case .small: .footnote
+        case .medium: .subheadline
+        case .large: .headline
+        }
+    }
+
+    var fontWeight: Font.Weight {
+        switch self {
+        case .small: .regular
+        case .medium: .medium
+        case .large: .semibold
+        }
+    }
 }
 
 @MainActor

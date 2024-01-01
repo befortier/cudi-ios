@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreateUserDTO: Equatable, Sendable, Encodable {
+struct CreateUserDTO: EncodedDTO, Equatable {
     let userID = UUID().uuidString
     let name: String
     let email: String

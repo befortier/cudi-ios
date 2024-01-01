@@ -1,15 +1,15 @@
 //
-//  PetCard.swift
+//  RoundedPetCard.swift
 //  ios-cudi
 //
-//  Created by Ben Fortier on 12/29/23.
+//  Created by Ben Fortier on 1/1/24.
 //
 
 import Foundation
 import SwiftUI
 
 @MainActor
-struct PetCard: View {
+struct RoundedPetCard: View {
     private let cornerRadius: CGFloat = 12
     private let aspectRatio: CGFloat = 0.85
     @Environment(\.petCardSize) private var  petCardSize
@@ -39,25 +39,32 @@ struct PetCard: View {
             image
             titleView
         }
-        .background(.white)
-        .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
         .foregroundStyle(AppColor.textPrimary)
-        .frame(width: petCardSize.rawValue, height: petCardSize.rawValue * aspectRatio)
+        .frame(width: petCardSize.rawValue)
+        .clipShape(imageCardShape)
         .shadow(color: Color.gray.opacity(0.2), radius: 3, x: 0, y: 3)
     }
 
     private var image: some View {
         ContentImage(contentType: imageContentType)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .aspectRatio(aspectRatio, contentMode: .fill)
+            .setImageContentMode(contentMode: .fill)
+            .frame(
+                width: petCardSize.rawValue
+            )
+            .frame(
+                maxHeight: .infinity
+            )
             .overlay(imageCardShape.stroke(.gray, lineWidth: 0.5))
     }
 
     private var titleView: some View {
-
         Text(title)
-            .font(.caption)
-            .foregroundStyle(AppColor.textPrimary)
+            .font(petCardSize.font)
+            .fontWeight(petCardSize.fontWeight)
+            .frame(maxWidth: .infinity)
             .padding(.vertical, 4)
+            .background(.white)
     }
 
     private var imageCardShape: some Shape {
@@ -75,18 +82,32 @@ struct PetCard: View {
     let cudi = Pet(petDTO: .cudi)
     let url = URL(string: "gogole.com")!
     cudi.avatarURL = url
-    return HStack(spacing: 8) {
-        PetCard(pet: cudi)
-            .aspectRatio(contentMode: .fill)
+    return VStack(spacing: 8) {
+        RoundedPetCard(pet: cudi)
             .setPetCardSize(.small)
-            .task {
-                await InMemoryCache.shared.set(UIImage(named: "cudi"), for: url)
-            }
-        Spacer()
 
-        PetCard()
+        RoundedPetCard(pet: cudi)
             .setPetCardSize(.medium)
 
+        RoundedPetCard(pet: cudi)
+            .setPetCardSize(.large)
+
+        Spacer()
+
+        HStack {
+            RoundedPetCard(pet: cudi)
+                .setPetCardSize(.small)
+            RoundedPetCard(pet: Pet(petDTO: .brodie))
+                .setPetCardSize(.small)
+            RoundedPetCard()
+                .setPetCardSize(.small)
+
+        }
+
+        RoundedPetCard()
+    }
+    .task {
+        await InMemoryCache.shared.set(UIImage(named: "cudi"), for: url)
     }
     .modelContainer(container)
     .padding()

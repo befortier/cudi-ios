@@ -22,7 +22,6 @@ struct CircleImageView: View {
                 Circle()
                     .stroke(.gray.opacity(0.15), lineWidth: 1)
             }
-
     }
 }
 

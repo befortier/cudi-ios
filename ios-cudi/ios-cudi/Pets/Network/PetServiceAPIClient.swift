@@ -27,6 +27,14 @@ struct PetServiceAPIClient {
         ]
 //        return try await httpClient.fetch(from: GetPetsEndpoint())
     }
+
+
+    func getPets(for petIDs: [Pet.ID]) async throws -> [PetDTO] {
+        return [
+            .new
+        ]
+//        return try await httpClient.fetch(from: GetPetsEndpoint())
+    }
 }
 
 struct GetPetsEndpoint: GetEndpoint {

@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct AddPetDTO: Encodable {
+protocol EncodedDTO: Encodable, Sendable {}
+
+struct AddPetDTO: EncodedDTO {
     let name: String
     let type: PetType
     let birthdate: Date

@@ -10,6 +10,8 @@ import SwiftUI
 
 @MainActor
 struct AsyncCachedImage<Placeholder: View>: View {
+    @Environment(\.imageContentMode) var contentMode: ContentMode?
+
     private var loader: ImageLoader
     private let placeholder: () -> Placeholder
 
@@ -31,6 +33,7 @@ struct AsyncCachedImage<Placeholder: View>: View {
             if loader.image != nil {
                 Image(uiImage: loader.image!)
                     .resizable()
+                    .aspectRatio(contentMode: contentMode ?? .fill)
             } else {
                 placeholder()
             }
