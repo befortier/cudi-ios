@@ -11,7 +11,7 @@ import SwiftUI
 @MainActor
 struct RoundedPetCard: View {
     private let cornerRadius: CGFloat = 12
-    private let aspectRatio: CGFloat = 0.85
+    private let aspectRatio: CGFloat = 0.6
     @Environment(\.petCardSize) private var  petCardSize
 
     private let pet: Pet?
@@ -39,6 +39,7 @@ struct RoundedPetCard: View {
             image
             titleView
         }
+
         .foregroundStyle(AppColor.textPrimary)
         .frame(width: petCardSize.rawValue)
         .clipShape(imageCardShape)
@@ -47,13 +48,9 @@ struct RoundedPetCard: View {
 
     private var image: some View {
         ContentImage(contentType: imageContentType)
-            .aspectRatio(aspectRatio, contentMode: .fill)
-            .setImageContentMode(contentMode: .fill)
             .frame(
-                width: petCardSize.rawValue
-            )
-            .frame(
-                maxHeight: .infinity
+                width: petCardSize.rawValue,
+                height: petCardSize.rawValue * aspectRatio
             )
             .overlay(imageCardShape.stroke(.gray, lineWidth: 0.5))
     }
