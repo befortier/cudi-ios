@@ -13,16 +13,24 @@ struct CircularPetCard: View {
     private let aspectRatio: CGFloat = 0.85
     @Environment(\.petCardSize) private var  petCardSize
 
-    private let pet: Pet
+    private let title: String
     private let imageContentType: ImageContentType
 
     init(pet: Pet) {
-        self.pet = pet
+        self.title = pet.name
         if let avatarURL = pet.avatarURL {
             self.imageContentType = .remote(avatarURL)
         } else {
             self.imageContentType = .systemName(pet.type.rawValue)
         }
+    }
+
+    init(
+        title: String,
+        imageContentType: ImageContentType
+    ) {
+        self.title = title
+        self.imageContentType = imageContentType
     }
 
     var body: some View {
@@ -31,14 +39,14 @@ struct CircularPetCard: View {
                 .setCircleCardSize(petCardSize.circleCardSize)
             titleView
         }
-        .foregroundStyle(AppColor.textPrimary)
+        .foregroundStyle(.textPrimary)
     }
 
     private var titleView: some View {
-        Text(pet.name)
+        Text(title)
             .font(petCardSize.font)
             .fontWeight(petCardSize.fontWeight)
-            .foregroundStyle(AppColor.textPrimary)
+            .foregroundStyle(.textPrimary)
             .padding(.vertical, 4)
     }
 }
@@ -48,13 +56,17 @@ struct CircularPetCard: View {
     let cudi = Pet(petDTO: .cudi)
     let url = URL(string: "gogole.com")!
     cudi.avatarURL = url
-    return HStack(spacing: 8) {
-        CircularPetCard(pet: cudi)
-            .setPetCardSize(.small)
-        CircularPetCard(pet: cudi)
-            .setPetCardSize(.medium)
-        CircularPetCard(pet: cudi)
-            .setPetCardSize(.large)
+    return VStack(spacing: 8) {
+        HStack{
+            CircularPetCard(pet: cudi)
+                .setPetCardSize(.small)
+            CircularPetCard(pet: cudi)
+                .setPetCardSize(.medium)
+            CircularPetCard(pet: cudi)
+                .setPetCardSize(.large)
+        }
+
+        CircularPetCard(title: "3 friends", imageContentType: .systemName("plus"))
 
     }
     .task {
@@ -62,5 +74,5 @@ struct CircularPetCard: View {
     }
     .modelContainer(container)
     .padding()
-    .background(AppColor.softBackground)
+    .background(.softBackground)
 }

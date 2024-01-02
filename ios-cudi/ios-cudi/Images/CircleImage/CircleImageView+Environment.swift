@@ -28,22 +28,3 @@ extension View {
     }
 }
 
-// MARK: AspectRatio
-
-@MainActor
-private struct CircleImageContentModeEnvironmentKey: EnvironmentKey {
-    static let defaultValue: ContentMode? = nil
-}
-
-extension EnvironmentValues {
-    var imageContentMode: ContentMode? {
-        get { self[CircleImageContentModeEnvironmentKey.self] }
-        set { self[CircleImageContentModeEnvironmentKey.self] = newValue }
-    }
-}
-
-extension View {
-    func setImageContentMode(contentMode: ContentMode) -> some View {
-        environment(\.imageContentMode, contentMode)
-    }
-}

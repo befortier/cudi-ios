@@ -30,8 +30,8 @@ struct AsyncCachedImage<Placeholder: View>: View {
 
     private var content: some View {
         Group {
-            if loader.image != nil {
-                Image(uiImage: loader.image!)
+            if let uiImage = loader.image {
+                Image(uiImage: uiImage)
                     .resizable()
                     .aspectRatio(contentMode: contentMode ?? .fill)
             } else {

@@ -35,6 +35,10 @@
 		5769DC1A2B4245F1001B98F5 /* ActivityFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC192B4245F1001B98F5 /* ActivityFeedItem.swift */; };
 		5769DC1C2B424B29001B98F5 /* ActivityFeedServiceAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769DC1B2B424B29001B98F5 /* ActivityFeedServiceAPIClient.swift */; };
 		5771938D2B4321240078617C /* PetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5771938C2B4321240078617C /* PetRepository.swift */; };
+		577193902B4333680078617C /* Image+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5771938F2B4333680078617C /* Image+Environment.swift */; };
+		577193922B4340C50078617C /* ActivityItemTypeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577193912B4340C50078617C /* ActivityItemTypeIcon.swift */; };
+		577193942B4354EC0078617C /* ActivityFeedTagBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577193932B4354EC0078617C /* ActivityFeedTagBadge.swift */; };
+		577193972B43B7100078617C /* String+CapitilizedFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577193962B43B7100078617C /* String+CapitilizedFirst.swift */; };
 		577394FC2B3DC00500F002E6 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */; };
 		577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FD2B3DC01000F002E6 /* EmailValidator.swift */; };
 		577395002B3DC0B800F002E6 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577394FF2B3DC0B800F002E6 /* TextFieldState.swift */; };
@@ -147,6 +151,10 @@
 		5769DC192B4245F1001B98F5 /* ActivityFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedItem.swift; sourceTree = "<group>"; };
 		5769DC1B2B424B29001B98F5 /* ActivityFeedServiceAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedServiceAPIClient.swift; sourceTree = "<group>"; };
 		5771938C2B4321240078617C /* PetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRepository.swift; sourceTree = "<group>"; };
+		5771938F2B4333680078617C /* Image+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Environment.swift"; sourceTree = "<group>"; };
+		577193912B4340C50078617C /* ActivityItemTypeIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItemTypeIcon.swift; sourceTree = "<group>"; };
+		577193932B4354EC0078617C /* ActivityFeedTagBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedTagBadge.swift; sourceTree = "<group>"; };
+		577193962B43B7100078617C /* String+CapitilizedFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CapitilizedFirst.swift"; sourceTree = "<group>"; };
 		577394FB2B3DC00500F002E6 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		577394FD2B3DC01000F002E6 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		577394FF2B3DC0B800F002E6 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
@@ -378,6 +386,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		577193952B43B7020078617C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				577193962B43B7100078617C /* String+CapitilizedFirst.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		577394FA2B3DBFF800F002E6 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +547,7 @@
 		579D5B142B3C86AA00BEB762 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				577193952B43B7020078617C /* Extensions */,
 				57E61F162B3DF6980099555A /* ViewModifier */,
 				579D5B152B3C86B400BEB762 /* UserDefaults+PropertyWrapper.swift */,
 				579D5B192B3C914400BEB762 /* Colors.swift */,
@@ -594,6 +611,7 @@
 				57E61F242B3F2C1B0099555A /* ImageLoader.swift */,
 				57E61F262B3F2D9F0099555A /* ImageCache.swift */,
 				57C5C3252B41D01900FC2707 /* ContentImage.swift */,
+				5771938F2B4333680078617C /* Image+Environment.swift */,
 			);
 			path = AsyncCachedImage;
 			sourceTree = "<group>";
@@ -658,6 +676,8 @@
 			children = (
 				5769DC102B423290001B98F5 /* ActivityFeedCard.swift */,
 				57E9A16F2B42FD0600E28646 /* ActivityFeedCard+Environment.swift */,
+				577193912B4340C50078617C /* ActivityItemTypeIcon.swift */,
+				577193932B4354EC0078617C /* ActivityFeedTagBadge.swift */,
 			);
 			path = ActivityFeedCard;
 			sourceTree = "<group>";
@@ -801,6 +821,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				577394FC2B3DC00500F002E6 /* TextFieldValidator.swift in Sources */,
+				577193972B43B7100078617C /* String+CapitilizedFirst.swift in Sources */,
 				57C5C3262B41D01900FC2707 /* ContentImage.swift in Sources */,
 				5751F8432B40A5D900F26C45 /* PetTypeSelectionView.swift in Sources */,
 				579D5B182B3C8DF500BEB762 /* SignupView.swift in Sources */,
@@ -841,10 +862,12 @@
 				57E61F392B3F3DA20099555A /* AppState+ViewModifier.swift in Sources */,
 				579D5B0D2B3C80FC00BEB762 /* RootView.swift in Sources */,
 				579D5B0A2B3C7FB400BEB762 /* User.swift in Sources */,
+				577193942B4354EC0078617C /* ActivityFeedTagBadge.swift in Sources */,
 				5769DC1C2B424B29001B98F5 /* ActivityFeedServiceAPIClient.swift in Sources */,
 				57E61F372B3F3C720099555A /* PetDTO.swift in Sources */,
 				574663A82B3CAF1700EFF1F9 /* EmailTextField.swift in Sources */,
 				574663AA2B3CB3E900EFF1F9 /* BaseSecureField.swift in Sources */,
+				577193902B4333680078617C /* Image+Environment.swift in Sources */,
 				57E61F352B3F3AC90099555A /* UserStore.swift in Sources */,
 				5769DC1A2B4245F1001B98F5 /* ActivityFeedItem.swift in Sources */,
 				57E9A1732B430F0B00E28646 /* PetTypeSelectionOption.swift in Sources */,
@@ -853,6 +876,7 @@
 				57E61F312B3F39F00099555A /* Pet.swift in Sources */,
 				57E61F1F2B3F29420099555A /* AsyncCachedImage.swift in Sources */,
 				572BE50E2B40664A0039F1E6 /* InterpretedHTTPMethod.swift in Sources */,
+				577193922B4340C50078617C /* ActivityItemTypeIcon.swift in Sources */,
 				57FA76D32B3F717800CACAD0 /* PetDetailView.swift in Sources */,
 				577394FE2B3DC01000F002E6 /* EmailValidator.swift in Sources */,
 				57E61F452B3F451E0099555A /* PetStore+Environment.swift in Sources */,

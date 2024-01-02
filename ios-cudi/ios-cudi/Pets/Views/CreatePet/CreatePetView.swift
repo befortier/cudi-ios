@@ -35,7 +35,7 @@ struct CreatePetView: View {
             .padding(.horizontal, 16)
         }
         .minamlistNavBar()
-        .background(AppColor.softBackground) // TODO: Back some background with bones/wiskers...
+        .background(.softBackground) // TODO: Back some background with bones/wiskers...
     }
 
     private var addImageSection: some View {

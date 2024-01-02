@@ -29,10 +29,18 @@ struct ActivityFeedCard: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: .zero) {
-            titleView
-            subtitleView
+        VStack(alignment: .leading, spacing: 4) {
+            // TODO: some badge for type
+            // Some Color on the card
+            descriptionView
+            Divider()
+            activityBar
+                .padding(.vertical, 4)
             petsSection
+            Divider()
+                .padding(.vertical, 4)
+            bottomSection
+
         }
         .padding(12)
         .background(.white)
@@ -40,21 +48,26 @@ struct ActivityFeedCard: View {
         .foregroundStyle(AppColor.textPrimary)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .shadow(color: Color.gray.opacity(0.2), radius: 3, x: 0, y: 3)
-        .background(.red)
         .onFirstAppear {
             Task {
-                try await Task.sleep(for: .seconds(1.0))
                 try? await PetRepository(petStore: petStore).setPets(with: item.ownerPets)
             }
         }
-        .onChange(of: pets) { oldValue, newValue in
-            print("HERE CHANGES", oldValue, newValue)
+    }
+
+    private var descriptionView: some View {
+        VStack(spacing: 8) {
+            HStack(spacing: 8) {
+                ActivityItemTypeIcon(type: item.type)
+                titleView
+            }
+            subtitleView
         }
     }
 
     private var titleView: some View {
         Text(item.title)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .font(.title3)
             .fontWeight(.semibold)
             .foregroundStyle(AppColor.textPrimary)
@@ -62,36 +75,76 @@ struct ActivityFeedCard: View {
 
     private var subtitleView: some View {
         Text(item.subtitle)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity,  alignment: .leading)
             .font(.caption)
             .foregroundStyle(.gray)
-            .padding(.vertical, 4)
+        
+//            .background(.blue)
     }
 
     @ViewBuilder
     private var petsSection: some View {
         HStack {
-            ForEach(pets) { pet in
+            ForEach(Array(pets.prefix(3))) { pet in
                 CircularPetCard(pet: pet)
-                    .setPetCardSize(.small)
+            }
+
+            if pets.count > 3 {
+                CircularPetCard(title: "3 friends", imageContentType: .systemName("plus"))
             }
         }
+        .setPetCardSize(.small)
+
+    }
+
+    @ViewBuilder
+    private var activityBar: some View {
+        HStack {
+            
+        }
+        // Should have number of pictures, videos, filters
+        Capsule()
+            .fill(.blue)
+            .frame(height: 16)
+    }
+
+    @ViewBuilder
+    private var bottomSection: some View {
+        HStack(alignment: .bottom) {
+            timeSinceText
+            Spacer()
+            posterText
+        }
+    }
+
+    private var posterText: some View {
+        Text("Pups Pet Club")
+            .font(.caption)
+            .foregroundStyle(.gray)
+    }
+
+    private var timeSinceText: some View {
+        Text("12s ago")
+            .font(.caption)
+            .foregroundStyle(.gray)
     }
 }
 
 #Preview {
     let container = DataController.previewContainer
     let walkItem = ActivityFeedItem(activityFeedDTO: .walk)
+    let playdate = ActivityFeedItem(activityFeedDTO: .playdate)
+    let food = ActivityFeedItem(activityFeedDTO: .food)
 
     return ScrollView {
         VStack(spacing: 24) {
             ActivityFeedCard(item: walkItem)
                 .padding(.horizontal, 32)
 
-            ActivityFeedCard(item: walkItem)
+            ActivityFeedCard(item: playdate)
                 .padding(.horizontal, 32)
 
-            ActivityFeedCard(item: walkItem)
+            ActivityFeedCard(item: food)
                 .padding(.horizontal, 32)
 
             ActivityFeedCard(item: walkItem)
@@ -102,28 +155,4 @@ struct ActivityFeedCard: View {
     .modelContainer(container)
     .setAppState(.stub())
     .background(AppColor.softBackground)
-}
-
-@MainActor
-struct ActivityFeedItemPetSection: View {
-    let viewModel: ViewModel
-
-    var body: some View {
-        EmptyView()
-    }
-}
-extension ActivityFeedItemPetSection {
-    @Observable @MainActor
-    class ViewModel {
-        // TODO: When a user removes a pet how do we clean up activity feed?
-
-        init(
-            petRepository: PetRepository,
-            petIDs: [Pet.ID]
-        ) {
-            Task { try await petRepository.setPets(with: petIDs)}
-
-            // need to set pets but also request any that are not there
-        }
-    }
 }

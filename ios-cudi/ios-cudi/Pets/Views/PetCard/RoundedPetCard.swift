@@ -18,6 +18,14 @@ struct RoundedPetCard: View {
     var title: String {
         pet?.name ?? "Add Pet"
     }
+
+    var padding: CGFloat? {
+        guard case .systemName = imageContentType else {
+            return nil
+        }
+        return 10
+    }
+
     private let imageContentType: ImageContentType
 
     init(pet: Pet) {
@@ -40,7 +48,7 @@ struct RoundedPetCard: View {
             titleView
         }
 
-        .foregroundStyle(AppColor.textPrimary)
+        .foregroundStyle(.textPrimary)
         .frame(width: petCardSize.rawValue)
         .clipShape(imageCardShape)
         .shadow(color: Color.gray.opacity(0.2), radius: 3, x: 0, y: 3)
@@ -48,6 +56,7 @@ struct RoundedPetCard: View {
 
     private var image: some View {
         ContentImage(contentType: imageContentType)
+            .padding(padding ?? .zero)
             .frame(
                 width: petCardSize.rawValue,
                 height: petCardSize.rawValue * aspectRatio
@@ -108,5 +117,5 @@ struct RoundedPetCard: View {
     }
     .modelContainer(container)
     .padding()
-    .background(AppColor.softBackground)
+    .background(.softBackground)
 }

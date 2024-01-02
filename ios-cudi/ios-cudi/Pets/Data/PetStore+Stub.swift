@@ -14,6 +14,8 @@ extension PetStore {
         let petDTOs = [
             .cudi,
             .brisco,
+            .gatto,
+            .brodie,
             PetDTO(id: "ranom", name: "Brisco", type: .dog, birthdate: .now, avatarURL: nil),
             PetDTO(id: "ranom2", name: "Catto", type: .cat, birthdate: .now, avatarURL: nil),
         ]

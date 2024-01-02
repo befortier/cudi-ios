@@ -101,7 +101,7 @@ struct EditableAvatarView: View {
                     .padding(imagePadding)
                     .background(
                         RoundedRectangle(cornerRadius: imageDiameter)
-                            .fill(AppColor.background.opacity(0.8))
+                            .fill(.background.opacity(0.8))
                     )
                     .foregroundStyle(.red)
             }
@@ -119,7 +119,7 @@ struct EditableAvatarView: View {
                 .padding(imagePadding)
                 .background(
                     RoundedRectangle(cornerRadius: imageDiameter)
-                        .fill(AppColor.backgroundAlt.opacity(0.8))
+                        .fill(.backgroundAlt.opacity(0.8))
                 )
                 .foregroundStyle(.gray)
         }

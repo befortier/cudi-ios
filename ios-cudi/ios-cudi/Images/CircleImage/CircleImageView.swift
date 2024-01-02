@@ -28,23 +28,6 @@ struct CircleImageView: View {
         return circleCardSize.rawValue
     }
 
-//    var frameDimension: CGFloat {
-//        if imageContentMode == .fill {
-//            // no padding
-//            return circleCardSize.rawValue
-//        }
-//        switch contentType {
-//        case .systemName(let string):
-//            <#code#>
-//        case .remote(let uRL):
-//            <#code#>
-//        case .image(let uIImage):
-//            circleCardSize.rawValue
-//        }
-//        // if its a fit, we want no padding internally so we want image frame
-//        // to be the interior square
-//    }
-
     var contentType: ImageContentType
 
     var body: some View {
